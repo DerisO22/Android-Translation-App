@@ -7,4 +7,25 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Default Color Palette -->
+    <color name="plat">#CDD7D6</color>
+    <color name="teal">#102542</color>
+    <color name="pink">#F87060</color>
+    <color name="khaki">#B3A394</color>
+
+    <!-- Color Palette 1 -->
+    <color name="snow">#FCF7F8</color>
+    <color name="french">#CED3DC</color>
+    <color name="quartz">#ABA9C3</color>
+    <color name="denim">#275DAD</color>
+    <color name="payne">#585E66</color>
+
+    <!-- Color Palette 1
+    <color name="">#FCF7F8</color>
+    <color name="">#CED3DC</color>
+    <color name="">#ABA9C3</color>
+    <color name="">#275DAD</color>
+    <color name="">#585E66</color>
+    -->
 </resources>

@@ -3,12 +3,12 @@ plugins {
 }
 
 android {
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.example.translationapp"
         minSdk 21
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -38,6 +38,6 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-core:21.1.1'
     implementation 'com.google.firebase:firebase-ml-natural-language:22.0.1'
-    implementation 'com.google.firebase:firebase-ml-natural-language-id-model:20.0.7'
+    //implementation 'com.google.firebase:firebase-ml-natural-language-id-model:20.0.7'
     implementation 'com.google.firebase:firebase-ml-natural-language-translate-model:20.0.9'
 }
