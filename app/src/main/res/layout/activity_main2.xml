@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:background="@color/plat"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".homeActivity"
     tools:ignore="NamespaceTypo">
 
     <TextView
@@ -47,7 +47,8 @@
             android:layout_weight="1"
             android:src="@drawable/baseline_dehaze_24"
             app:tint="@color/white"
-            android:layout_gravity="left" />
+            android:layout_gravity="left"
+            tools:ignore="UseAppTint" />
 
         <Spinner
             android:layout_width="0dp"

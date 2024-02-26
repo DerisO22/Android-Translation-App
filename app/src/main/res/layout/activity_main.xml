@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:background="@color/plat"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".homeActivity"
     tools:ignore="NamespaceTypo">
 
     <TextView
@@ -16,7 +16,7 @@
         android:layout_marginBottom="15dp"
         android:gravity="center"
         android:padding="4dp"
-        android:text="Translation App"
+        android:text="Home"
         android:textAlignment="center"
         android:textColor="@color/teal"
         android:textSize="20sp"
@@ -27,26 +27,32 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="3"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:gravity="center"
         android:layout_marginTop="10dp">
 
         <Button
-            android:id="@+id/button3"
-            android:layout_width="165dp"
+            android:id="@+id/button1"
+            android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_marginHorizontal="20dp"
+            android:layout_marginHorizontal="10dp"
             android:text="Text Translator"
-            tools:layout_editor_absoluteX="51dp"
-            tools:layout_editor_absoluteY="183dp" />
+            android:textColorHighlight="@color/white"
+            android:textFontWeight="950"
+            android:textSize="16sp"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/translate_logo"
+            android:layout_gravity="center" />
 
         <Button
-            android:id="@+id/button4"
-            android:layout_width="165dp"
+            android:id="@+id/button2"
+            android:layout_width="150dp"
             android:layout_height="150dp"
             android:text="Speech Translator"
-            tools:layout_editor_absoluteX="227dp"
-            tools:layout_editor_absoluteY="183dp" />
+            android:textSize="16sp"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/mic"
+            android:layout_marginHorizontal="10dp"
+            android:layout_gravity="center" />
 
     </LinearLayout>
 
@@ -55,29 +61,30 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="3"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:gravity="center"
         android:layout_marginTop="10dp">
 
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginHorizontal="10dp"
+            android:text="Image Translate"
+            android:textSize="16sp"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/image_logo"
+            android:layout_gravity="center" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="165dp"
-        android:layout_height="150dp"
-        android:layout_marginHorizontal="20dp"
-        android:gravity="center"
-        android:text="Button"
-        tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="369dp" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="165dp"
-        android:layout_height="150dp"
-        android:gravity="center"
-        android:text="Button"
-        tools:layout_editor_absoluteX="207dp"
-        tools:layout_editor_absoluteY="366dp" />
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:text="Practice"
+            android:textSize="16sp"
+            android:layout_marginHorizontal="10dp"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/book_logo"
+            android:layout_gravity="center" />
     </LinearLayout>
 
 </LinearLayout>
