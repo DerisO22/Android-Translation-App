@@ -23,6 +23,7 @@
     </TextView>
 
     <LinearLayout
+        android:id="@+id/optionsLl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -30,62 +31,51 @@
         android:gravity="center"
         android:layout_marginTop="10dp">
 
-        <Spinner
-            android:id="@+id/firstLangMenu"
-            android:layout_width="0dp"
+        <Button
+            android:id="@+id/sourceLanguageChooseBtn"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
+            android:text="English"
             android:gravity="center"
             android:padding="3dp"
             />
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="70dp"
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/baseline_compare_arrows_24"
+            android:src="@drawable/baseline_arrow_forward_24"
+            android:background="@android:color/transparent"
             app:tint="@color/white"
             android:layout_gravity="center"
             tools:ignore="UseAppTint" />
 
-        <Spinner
-            android:id="@+id/secondLangMenu"
-            android:layout_width="0dp"
+        <Button
+            android:id="@+id/destinationLanguageChooseBtn"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
+            android:text="German"
             android:gravity="center"
             android:padding="3dp" />
 
     </LinearLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
+        <EditText
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:gravity="center"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_height="wrap_content"
+            android:id="@+id/sourceLanguageEt"
             android:hint="Enter Text"
-            android:padding="5dp"
-            android:textColorHint="#000000">
-
-            <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/idEdtSource"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:ems="10"
-            android:importantForAutofill="no"
-            android:inputType="textImeMultiLine|textMultiLine"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textSize="14sp"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginTop="10dp"
+            android:minHeight="70dp"
+            android:gravity="start"
+            android:textSize="18dp"/>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/idBtnTranslate"
+        android:id="@+id/translateBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -96,7 +86,7 @@
         android:backgroundTint="@color/teal"/>
 
     <TextView
-        android:id="@+id/idTranslatedText"
+        android:id="@+id/destinationLanguageTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Translated Text"
@@ -106,3 +96,26 @@
         android:textSize="20sp"
         android:textAlignment="center"/>
 </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
