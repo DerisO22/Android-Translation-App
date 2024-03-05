@@ -5,8 +5,10 @@
 <p align="center"><strong>Welcome to my Translation App</strong>
 <p align="center"><strong>My app allows users to translate text, speech, and images from a wide variety of different languages.<br>Navigate through the different windows by scrolling
 or choosing a window from the home page.<br>Using Firebase ML and other language APIs, you will be able to accurately translate between 50+ langauges.</strong>
+<br><br><br>
 
-```json
+```
+//Populate the List With All Available Languages FireBase Has Available
 private void loadAvailableLanguages() {
         languageArrayList = new ArrayList<>();
 
@@ -21,5 +23,4 @@ private void loadAvailableLanguages() {
             languageArrayList.add(modelLanguage);
         }
     }
-
 ```
