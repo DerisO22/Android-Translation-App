@@ -4,4 +4,9 @@
 
 <p align="center"><strong>Welcome to my Translation App</strong>
 <p align="center"><strong>My app allows users to translate text, speech, and images from a wide variety of different languages.<br>Navigate through the different windows by scrolling
-or choosing a window from the home page.<br>Using Firebase ML and other language APIs, you will be able to accurately translate between 20+ langauges.</strong>
+or choosing a window from the home page.<br>Using Firebase ML and other language APIs, you will be able to accurately translate between 50+ langauges.</strong>
+
+```json
+//Populate List of With The 50 Langauges FireBase MLKit Provides:
+
+```
