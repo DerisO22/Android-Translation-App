@@ -7,7 +7,7 @@
 or choosing a window from the home page.<br>Using Firebase ML and other language APIs, you will be able to accurately translate between 50+ langauges.</strong>
 <br><br><br>
 
-```
+```ruby
 //Populate the List With All Available Languages FireBase Has Available
 private void loadAvailableLanguages() {
         languageArrayList = new ArrayList<>();
