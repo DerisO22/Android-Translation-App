@@ -7,6 +7,19 @@
 or choosing a window from the home page.<br>Using Firebase ML and other language APIs, you will be able to accurately translate between 50+ langauges.</strong>
 
 ```json
-//Populate List of With The 50 Langauges FireBase MLKit Provides:
+private void loadAvailableLanguages() {
+        languageArrayList = new ArrayList<>();
+
+        List<String> languageCodeList = TranslateLanguage.getAllLanguages();
+
+        for(String languageCode: languageCodeList){
+            String languageTitle = new Locale(languageCode).getDisplayLanguage();
+            Log.d(TAG, "LoadAvailableLanguages: languageCode: "+languageCode);
+            Log.d(TAG, "LoadAvailableLanguages: languageCode: "+languageTitle);
+
+            ModelLanguage modelLanguage = new ModelLanguage(languageCode, languageTitle);
+            languageArrayList.add(modelLanguage);
+        }
+    }
 
 ```
