@@ -50,6 +50,7 @@ public class textActivity extends AppCompatActivity {
 
     private static final String TAG = "MAIN_TAG";
 
+    //Initial Languages
     private String sourceLanguageCode = "en";
     private String sourceLanguageTitle = "English";
     private String destinationLanguageCode = "ur";
@@ -61,6 +62,7 @@ public class textActivity extends AppCompatActivity {
         setContentView(R.layout.activity_text);
         setTitle("Text Translation");
 
+        //Get Elements Within activity_Text using ids
         sourceLanguageEt = findViewById(R.id.sourceLanguageEt);
         destinationLanguageTv = findViewById(R.id.destinationLanguageTv);
         sourceLanguageChooseBtn = findViewById(R.id.sourceLanguageChooseBtn);
@@ -115,29 +117,25 @@ public class textActivity extends AppCompatActivity {
         progressDialog.setMessage("Processing Language Model . . .");
         progressDialog.show();
 
-        translatorOptions = new TranslatorOptions.Builder()
+        TranslatorOptions translatorOptions = new TranslatorOptions.Builder()
                 .setSourceLanguage(sourceLanguageCode)
                 .setTargetLanguage(destinationLanguageCode)
                 .build();
 
+        final com.google.mlkit.nl.translate.Translator translator = Translation.getClient(translatorOptions);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            translator = (Translator) Translation.getClient(translatorOptions);
-        }
 
         DownloadConditions downloadConditions = new DownloadConditions.Builder()
                 .requireWifi()
                 .build();
 
         translator.downloadModelIfNeeded(downloadConditions)
-                .addSuccessListener(new OnSuccessListener<Void>(){
+                .addOnSuccessListener(new OnSuccessListener<Void>(){
                     @Override
                     public void onSuccess(Void unused) {
                         Log.d(TAG, "onSuccess: model ready, starting translate. . .");
 
                         progressDialog.show();
-
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
                             translator.translate(sourceLanguageText)
                                     .addOnSuccessListener(new OnSuccessListener<String>(){
 
@@ -156,7 +154,7 @@ public class textActivity extends AppCompatActivity {
                                             Toast.makeText(textActivity.this, "Failed to translate due to "+e.getMessage(), Toast.LENGTH_SHORT).show();
                                         }
                                     });
-                        }
+
                     }
                 })
                 .addOnFailureListener(new OnFailureListener(){
