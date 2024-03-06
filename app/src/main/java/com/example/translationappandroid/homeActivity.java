@@ -1,5 +1,6 @@
 package com.example.translationappandroid;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -7,16 +8,18 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 public class homeActivity extends AppCompatActivity {
 
-    Button btn;
-    Button btn2;
-    Button btn3;
-    Button btn4;
+    androidx.cardview.widget.CardView btn;
+    androidx.cardview.widget.CardView btn2;
+    androidx.cardview.widget.CardView btn3;
+    androidx.cardview.widget.CardView btn4;
 
     float x1,x2,y1,y2;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,10 +27,10 @@ public class homeActivity extends AppCompatActivity {
         setTitle("Translation App");
 
         //Navigate Between Windows From Home Page
-        btn = (Button) findViewById(R.id.button1);
-        btn2 =(Button) findViewById(R.id.button2);
-        btn3 = (Button) findViewById(R.id.button3);
-        btn4 =(Button) findViewById(R.id.button4);
+        btn = (CardView) findViewById(R.id.button1);
+        btn2 = (CardView) findViewById(R.id.button2);
+        btn3 = (CardView) findViewById(R.id.button3);
+        btn4 = (CardView) findViewById(R.id.button4);
 
         btn.setOnClickListener(new View.OnClickListener(){
             @Override

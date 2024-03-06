@@ -232,7 +232,7 @@ public class textActivity extends AppCompatActivity {
         for(String languageCode: languageCodeList){
             String languageTitle = new Locale(languageCode).getDisplayLanguage();
             Log.d(TAG, "LoadAvailableLanguages: languageCode: "+languageCode);
-            Log.d(TAG, "LoadAvailableLanguages: languageCode: "+languageTitle);
+            Log.d(TAG, "LoadAvailableLanguages: languageTitle: "+languageTitle);
 
             ModelLanguage modelLanguage = new ModelLanguage(languageCode, languageTitle);
             languageArrayList.add(modelLanguage);
