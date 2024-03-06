@@ -1,10 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background"
     android:layout_height="match_parent"
-    tools:context=".practiceActivity">
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+    tools:context=".homeActivity"
+    tools:ignore="NamespaceTypo">
+
+  
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_marginTop="30dp"
+      android:layout_marginStart="40dp"
+      android:layout_marginEnd="40dp"
+      android:background="@drawable/bgquestion">
+
+    <TextView
+        android:fontFamily="@font/nunitobold"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="#7C51F3"
+        android:textSize="22sp"
+        android:text="The Practice Zone
+                              Test your knowledge about different cultures">
+
+  </TextView>
+
+  </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+      <ImageButton
+          android:layout_width="150dp"
+          android:layout_height="150dp"
+          android:fontFamily="@font/nunitobold"
+          android:textFontWeight="950"
+          android:textSize="22sp"
+          android:text="Enter"
+          android:background="@drawable/icboss"
+          >
+
+      </ImageButton>
+
+    </LinearLayout>
+
+</LinearLayout>

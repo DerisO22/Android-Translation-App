@@ -53,8 +53,8 @@ public class textActivity extends AppCompatActivity {
     //Initial Languages
     private String sourceLanguageCode = "en";
     private String sourceLanguageTitle = "English";
-    private String destinationLanguageCode = "ur";
-    private String destinationLanguageTitle = "Urdu";
+    private String destinationLanguageCode = "de";
+    private String destinationLanguageTitle = "German";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -162,10 +162,8 @@ public class textActivity extends AppCompatActivity {
                     public void onFailure(@NonNull Exception e){
                         progressDialog.dismiss();
                         Toast.makeText(textActivity.this, "Failed to ready model due to "+e.getMessage(), Toast.LENGTH_SHORT).show();
-
                     }
                 });
-
     }
 
     private void sourceLanguageChoose(){

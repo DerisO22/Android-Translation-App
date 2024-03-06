@@ -1,9 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/plat"
     android:layout_height="match_parent"
-    tools:context=".imageActivity">
+    tools:context=".homeActivity"
+    tools:ignore="NamespaceTypo">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:padding="4dp"
+        android:fontFamily="@font/nunitobold"
+        android:textFontWeight="950"
+        android:text="Image Translation"
+        android:textAlignment="center"
+        android:textColor="@color/teal"
+        android:textSize="20sp"
+        android:textStyle="bold"></TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:fontFamily="@font/nunitobold"
+            android:textFontWeight="950"
+            android:textSize="22sp"
+            android:text="Upload Image"
+            android:background="@drawable/image_logo"
+            >
+
+        </com.google.android.material.button.MaterialButton>
+
+    </LinearLayout>
+
+</LinearLayout>
