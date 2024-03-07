@@ -8,7 +8,7 @@
 or choosing a window from the home page.<br>Using Firebase ML and other language APIs, you will be able to accurately translate between 50+ langauges.</strong></p>
 <br><br>
 
-<p><h2 align="center"><strong>Language Translation Code 💻</strong></h2></p>
+<p><h2 align="center"><strong>Translation Features Implementation 💻</strong></h2></p>
 
 <p><strong>-  loadAvailableLanguages() populates the list with all languages that FireBase ML Kit provides</strong></p>
 
