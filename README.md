@@ -32,19 +32,34 @@ private void loadAvailableLanguages() {
 <p><strong>-  Downloads the language model and outputs the translation, given the source and target language titles and codes.</strong></p>
 
 ```ruby
-private void loadAvailableLanguages() {
-        languageArrayList = new ArrayList<>();
+DownloadConditions downloadConditions = new DownloadConditions.Builder()
+                .requireWifi()
+                .build();
 
-        List<String> languageCodeList = TranslateLanguage.getAllLanguages();
+        translator.downloadModelIfNeeded(downloadConditions)
+                .addOnSuccessListener(new OnSuccessListener<Void>(){
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Log.d(TAG, "onSuccess: model ready, starting translate. . .");
 
-        for(String languageCode: languageCodeList){
-            String languageTitle = new Locale(languageCode).getDisplayLanguage();
-            Log.d(TAG, "LoadAvailableLanguages: languageCode: "+languageCode);
-            Log.d(TAG, "LoadAvailableLanguages: languageCode: "+languageTitle);
+                        progressDialog.show();
+                            translator.translate(sourceLanguageText)
+                                    .addOnSuccessListener(new OnSuccessListener<String>(){
 
-            ModelLanguage modelLanguage = new ModelLanguage(languageCode, languageTitle);
-            languageArrayList.add(modelLanguage);
-        }
-    }
+                                        @Override
+                                        public void onSuccess(String translatedText) {
+                                            //Successfully Translated
+                                            Log.d(TAG, "onSuccess: translatedText: "+translatedText);
+                                            progressDialog.dismiss();
+                                            destinationLanguageTv.setText(translatedText);
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            progressDialog.dismiss();
+                                            Toast.makeText(textActivity.this, "Failed to translate due to "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
 ```
 
