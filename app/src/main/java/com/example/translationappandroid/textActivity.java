@@ -12,6 +12,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.translation.Translator;
 import android.widget.Button;
 import android.widget.EditText;
@@ -56,6 +58,9 @@ public class textActivity extends AppCompatActivity {
     private String destinationLanguageCode = "de";
     private String destinationLanguageTitle = "German";
 
+    //Animation
+    Animation scaleUp, scaleDown;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,14 +74,18 @@ public class textActivity extends AppCompatActivity {
         destinationLanguageChooseBtn = findViewById(R.id.destinationLanguageChooseBtn);
         translateBtn = findViewById(R.id.translateBtn);
 
+        //Animation
+        scaleUp = AnimationUtils.loadAnimation(this,R.anim.scale_up);
+        scaleDown = AnimationUtils.loadAnimation(this,R.anim.scale_down);
 
+        //Language Init and Progress
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Getting Your Translation");
         progressDialog.setCanceledOnTouchOutside(false);
         loadAvailableLanguages();
 
 
-        //Handle SourceLangaugeChoose Btn
+        //Handle SourceLanguageChoose Btn
         sourceLanguageChooseBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -94,6 +103,8 @@ public class textActivity extends AppCompatActivity {
         translateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                translateBtn.startAnimation(scaleUp);
+                translateBtn.startAnimation(scaleDown);
                 validateData();
             }
         });

@@ -15,10 +15,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageView
+            android:id="@+id/menu"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/menu_logo"/>
+
         <RelativeLayout
             android:layout_marginEnd="20dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -199,7 +205,7 @@
                         android:fontFamily="@font/nunitobold"
                         android:layout_marginTop="8dp"
                         android:textSize="16sp"
-                        android:text="Practice"
+                        android:text="Practice Zone"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -239,7 +245,7 @@
                 android:fontFamily="@font/nunitobold"
                 android:textSize="16sp"
                 android:textFontWeight="950"
-                android:text="Supporting over 50 languages. Handy for fast and accurate text, voice, and image translations. Practice your cultural knowledge and better understand different nations."
+                android:text="Supporting over 50 languages. Handy for fast and accurate text, voice, and image translations. Practice your cultural knowledge and better understand different nations in the Practice Zone."
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
