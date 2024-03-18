@@ -1,5 +1,8 @@
 
-<p><h1 align="center"><strong>Android Translation App 🚀 </strong></h1></p>
+<h1 align="center">
+    <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&duration=4000&lines=Welcome!+👋;+Android+Translation+App+🚀;" />
+</h1>
+
 
 ![Translation Image](https://t3.ftcdn.net/jpg/04/36/43/12/360_F_436431209_IrKCuIPj2FubrYDZpYLZPZxDShsqSrwa.jpg)
 
