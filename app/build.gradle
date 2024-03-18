@@ -37,6 +37,9 @@ dependencies {
     //Text Translation
     implementation 'com.google.mlkit:translate:17.0.0'
 
+    //Text Recognition
+    implementation 'com.google.android.gms:play-services-mlkit-text-recognition:19.0.0'
+
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

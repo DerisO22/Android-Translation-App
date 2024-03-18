@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    xmlns:app1="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:padding="10dp"
     android:background="@color/plat"
     android:layout_height="match_parent"
     tools:context=".homeActivity"
@@ -27,20 +29,65 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:gravity="center">
 
         <com.google.android.material.button.MaterialButton
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:id="@+id/inputImageBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/nunitobold"
+            app1:icon="@drawable/baseline_add_a_photo_24"
+            android:textFontWeight="950"
+            app1:cornerRadius="5dp"
+            android:text="Upload Image"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/recognizeTextBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            app1:icon="@drawable/baseline_image_search_24"
+            android:layout_weight="1"
             android:fontFamily="@font/nunitobold"
             android:textFontWeight="950"
-            android:textSize="22sp"
-            android:text="Upload Image"
-            android:background="@drawable/image_logo"
-            >
-
-        </com.google.android.material.button.MaterialButton>
-
+            android:text="Extract Text"/>
     </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/image_logo"
+                android:adjustViewBounds="true"
+                app1:strokeWidth="2dp"/>
+
+            <TextView
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Recognized Text:"/>
+
+            <EditText
+                android:id="@+id/recognizedTextEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
