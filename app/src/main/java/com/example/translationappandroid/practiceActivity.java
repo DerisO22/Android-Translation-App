@@ -1,6 +1,7 @@
 package com.example.translationappandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -15,7 +16,10 @@ public class practiceActivity extends AppCompatActivity {
 
     float x1,x2,y1,y2;
     Animation scaleUp, scaleDown;
-    ImageButton monsterBtn;
+    private CardView cultureCategBtn;
+    private CardView flagsCategBtn;
+    private CardView geographyCategBtn;
+    private CardView languageCategBtn;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -24,15 +28,44 @@ public class practiceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_practice);
         setTitle("Practice");
 
-        monsterBtn = findViewById(R.id.monster);
+        //Category Buttons
+        cultureCategBtn = findViewById(R.id.button1);
+        flagsCategBtn = findViewById(R.id.button2);
+        geographyCategBtn = findViewById(R.id.button3);
+        languageCategBtn = findViewById(R.id.button4);
+
         scaleUp = AnimationUtils.loadAnimation(this,R.anim.scale_up);
         scaleDown = AnimationUtils.loadAnimation(this,R.anim.scale_down);
 
-        monsterBtn.setOnClickListener(new View.OnClickListener() {
+        cultureCategBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                monsterBtn.startAnimation(scaleUp);
-                monsterBtn.startAnimation(scaleDown);
+                cultureCategBtn.startAnimation(scaleUp);
+                cultureCategBtn.startAnimation(scaleDown);
+            }
+        });
+
+        flagsCategBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flagsCategBtn.startAnimation(scaleUp);
+                flagsCategBtn.startAnimation(scaleDown);
+            }
+        });
+
+        geographyCategBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                geographyCategBtn.startAnimation(scaleUp);
+                geographyCategBtn.startAnimation(scaleDown);
+            }
+        });
+
+        languageCategBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                languageCategBtn.startAnimation(scaleUp);
+                languageCategBtn.startAnimation(scaleDown);
             }
         });
     }

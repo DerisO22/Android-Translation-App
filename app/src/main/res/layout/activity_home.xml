@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     xmlns:app1="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@drawable/appbg2"
+    android:background="@drawable/home_roundbg"
     android:layout_height="match_parent"
     tools:context=".homeActivity"
     tools:ignore="NamespaceTypo">
@@ -13,18 +13,19 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="7dp">
 
         <ImageView
             android:id="@+id/menu"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/menu_logo"/>
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/menu"/>
 
         <RelativeLayout
             android:layout_marginEnd="20dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -35,7 +36,7 @@
                 android:layout_marginEnd="20dp"
                 android:fontFamily="@font/nunitobold"
                 android:textColor="@color/teal"
-                android:textSize="26sp"
+                android:textSize="28sp"
                 android:textStyle="bold"
                 android:textFontWeight="950"
                 android:text="Translation Home" />
@@ -48,17 +49,17 @@
                 android:layout_marginEnd="20dp"
                 android:fontFamily="@font/nunitobold"
                 android:textColor="@color/teal"
-                android:textSize="13sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
-                android:textFontWeight="950"
+                android:textFontWeight="50"
                 android:text="Explore Different Language Features" />
 
             <ImageView
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="20dp"
-                android:layout_width="62dp"
-                android:layout_height="62dp"
-                android:background="@drawable/homelogo"/>
+                android:layout_width="57dp"
+                android:layout_height="57dp"
+                android:background="@drawable/home_button"/>
 
 
         </RelativeLayout>
@@ -69,7 +70,6 @@
             android:rowCount="2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
             android:alignmentMode="alignMargins"
             android:columnOrderPreserved="false">
 
@@ -92,7 +92,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/translate_logo"
+                        android:src="@drawable/translation"
                         android:layout_width="80dp"
                         android:layout_height="80dp"/>
 
@@ -162,7 +162,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/image_logo"
+                        android:src="@drawable/picture"
                         android:layout_width="80dp"
                         android:layout_height="80dp"/>
 
@@ -197,7 +197,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/book_logo"
+                        android:src="@drawable/choose"
                         android:layout_width="80dp"
                         android:layout_height="80dp"/>
 
@@ -228,7 +228,7 @@
                 android:fontFamily="@font/nunitobold"
                 android:textSize="18sp"
                 android:textFontWeight="950"
-                android:text="Welcome to [Translation App Name]❗❗"
+                android:text="Welcome to [App Name]❗❗"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 

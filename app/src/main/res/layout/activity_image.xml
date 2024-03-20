@@ -6,7 +6,7 @@
     xmlns:app1="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="10dp"
-    android:background="@color/plat"
+    android:background="@color/white"
     android:layout_height="match_parent"
     tools:context=".homeActivity"
     tools:ignore="NamespaceTypo">

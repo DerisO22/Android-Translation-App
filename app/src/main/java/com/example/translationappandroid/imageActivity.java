@@ -126,11 +126,12 @@ public class imageActivity extends AppCompatActivity {
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(imageActivity.this, "Failed Recognizing Text Due To: "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                            e.printStackTrace();
+                            Toast.makeText(imageActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
         } catch (Exception e) {
-            Toast.makeText(this, "Failed Preparing Image Due To: "+e.getMessage(), Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
         }
     }
 
@@ -156,11 +157,9 @@ public class imageActivity extends AppCompatActivity {
                     }
                 } else if(id == 2) {
                     if(checkStoragePermission()){
-
                         pickImageGallery();
                     }
                 } else {
-
                     requestStoragePermission();
                 }
                 return true;
@@ -260,7 +259,6 @@ public class imageActivity extends AppCompatActivity {
                     boolean storageAccepted = grantResults[1] == PackageManager.PERMISSION_GRANTED;
 
                     if(cameraAccepted && storageAccepted){
-
                         pickImageCamera();
                     } else {
                         Toast.makeText(this, "Camera & Storage Permission are required", Toast.LENGTH_SHORT).show();
