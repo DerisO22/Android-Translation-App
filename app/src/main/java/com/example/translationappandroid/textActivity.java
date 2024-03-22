@@ -24,6 +24,7 @@ import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.mlkit.common.model.DownloadConditions;
 import com.google.mlkit.nl.translate.TranslateLanguage;
 import com.google.mlkit.nl.translate.Translation;
@@ -83,6 +84,38 @@ public class textActivity extends AppCompatActivity {
         progressDialog.setTitle("Getting Your Translation");
         progressDialog.setCanceledOnTouchOutside(false);
         loadAvailableLanguages();
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+
+        bottomNavigationView.setSelectedItemId(R.id.bottom_text);
+
+        bottomNavigationView.setOnItemSelectedListener(item ->{
+            switch(item.getItemId()){
+                case R.id.bottom_text:
+                    return true;
+                case R.id.bottom_home:
+                    startActivity(new Intent(getApplicationContext(), homeActivity.class));
+                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_voice:
+                    startActivity(new Intent(getApplicationContext(), voiceActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right);
+                    finish();
+                    return true;
+                case R.id.bottom_image:
+                    startActivity(new Intent(getApplicationContext(), imageActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right);
+                    finish();
+                    return true;
+                case R.id.bottom_quiz:
+                    startActivity(new Intent(getApplicationContext(), practiceActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right);
+                    finish();
+                    return true;
+            }
+            return false;
+        });
 
 
         //Handle SourceLanguageChoose Btn

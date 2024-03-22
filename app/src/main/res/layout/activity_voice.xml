@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    xmlns:app1="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/plat"
     android:layout_height="match_parent"
-    tools:context=".homeActivity"
+    tools:context=".voiceActivity"
     tools:ignore="NamespaceTypo">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
@@ -118,5 +124,26 @@
         android:textAlignment="center"
         android:text="Translated Text"/>
 
+    </LinearLayout>
 
-</LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomNavigationView"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottom_background"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="2dp"
+        app1:menu="@menu/bottom_menu"
+        app1:itemIconSize="25dp"
+        app1:itemIconTint="@drawable/item_selector"
+        app1:itemRippleColor="@android:color/transparent"
+        app1:labelVisibilityMode="unlabeled">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+</RelativeLayout>

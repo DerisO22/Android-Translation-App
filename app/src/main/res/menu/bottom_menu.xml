@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottom_home"
+        android:icon="@drawable/home_button"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/bottom_text"
+        android:icon="@drawable/translation"
+        android:title="Text"/>
+
+    <item
+        android:id="@+id/bottom_voice"
+        android:icon="@drawable/mic"
+        android:title="Voice"/>
+
+    <item
+        android:id="@+id/bottom_image"
+        android:icon="@drawable/picture"
+        android:title="Image"/>
+
+    <item
+        android:id="@+id/bottom_quiz"
+        android:icon="@drawable/monster"
+        android:title="Quiz"/>
+
+</menu>

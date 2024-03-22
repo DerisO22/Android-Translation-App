@@ -12,6 +12,8 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class homeActivity extends AppCompatActivity {
 
     androidx.cardview.widget.CardView btn;
@@ -39,6 +41,37 @@ public class homeActivity extends AppCompatActivity {
         scaleUp = AnimationUtils.loadAnimation(this,R.anim.scale_up);
         scaleDown = AnimationUtils.loadAnimation(this,R.anim.scale_down);
 
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+
+        bottomNavigationView.setSelectedItemId(R.id.bottom_home);
+
+        bottomNavigationView.setOnItemSelectedListener(item ->{
+            switch(item.getItemId()){
+                case R.id.bottom_home:
+                    return true;
+                case R.id.bottom_text:
+                    startActivity(new Intent(getApplicationContext(), textActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right);
+                    finish();
+                    return true;
+                case R.id.bottom_voice:
+                    startActivity(new Intent(getApplicationContext(), voiceActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right);
+                    finish();
+                    return true;
+                case R.id.bottom_image:
+                    startActivity(new Intent(getApplicationContext(), imageActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right);
+                    finish();
+                    return true;
+                case R.id.bottom_quiz:
+                    startActivity(new Intent(getApplicationContext(), practiceActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right);
+                    finish();
+                    return true;
+            }
+            return false;
+        });
 
         //Text Button
         btn.setOnClickListener(new View.OnClickListener(){
