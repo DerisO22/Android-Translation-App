@@ -32,6 +32,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.mlkit.vision.common.InputImage;
@@ -104,6 +105,38 @@ public class imageActivity extends AppCompatActivity {
                     recognizeTextFromImage();
                 }
             }
+        });
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+
+        bottomNavigationView.setSelectedItemId(R.id.bottom_image);
+
+        bottomNavigationView.setOnItemSelectedListener(item ->{
+            switch(item.getItemId()){
+                case R.id.bottom_image:
+                    return true;
+                case R.id.bottom_home:
+                    startActivity(new Intent(getApplicationContext(), homeActivity.class));
+                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_text:
+                    startActivity(new Intent(getApplicationContext(), textActivity.class));
+                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_voice:
+                    startActivity(new Intent(getApplicationContext(), voiceActivity.class));
+                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_quiz:
+                    startActivity(new Intent(getApplicationContext(), practiceActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right);
+                    finish();
+                    return true;
+            }
+            return false;
         });
     }
 

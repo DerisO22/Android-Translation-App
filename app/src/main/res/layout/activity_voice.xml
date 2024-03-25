@@ -60,32 +60,11 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="English"
+            android:text="Record Voice"
             android:fontFamily="@font/nunitobold"
             android:gravity="center"
             android:padding="3dp"
             />
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/baseline_arrow_forward_24"
-            android:background="@android:color/transparent"
-            app:tint="@color/white"
-            android:layout_gravity="center"
-            tools:ignore="UseAppTint" />
-
-        <Button
-            android:id="@+id/destinationLanguageChooseBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="3dp"
-            android:text="German"
-            android:fontFamily="@font/nunitobold"
-            android:gravity="center"
-            android:padding="3dp" />
 
     </LinearLayout>
 
@@ -100,6 +79,8 @@
         android:gravity="start"
         android:textSize="18dp"/>
 
+
+<!--
     <com.google.android.material.button.MaterialButton
         android:id="@+id/translateBtn"
         android:layout_width="match_parent"
@@ -122,7 +103,7 @@
         android:fontFamily="@font/nunitobold"
         android:textSize="20sp"
         android:textAlignment="center"
-        android:text="Translated Text"/>
+        android:text="Translated Text"/> -->
 
     </LinearLayout>
 

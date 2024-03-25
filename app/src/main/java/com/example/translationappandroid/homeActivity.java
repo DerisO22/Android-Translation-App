@@ -113,7 +113,6 @@ public class homeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
     //Swipe Window Right

@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textColor="#7C51F3"
-        android:textSize="22sp"
+        android:textSize="26sp"
         android:text="The Practice Zone\nChoose a Category">
   </TextView>
 

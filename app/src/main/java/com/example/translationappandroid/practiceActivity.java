@@ -12,6 +12,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class practiceActivity extends AppCompatActivity {
 
     float x1,x2,y1,y2;
@@ -67,6 +69,38 @@ public class practiceActivity extends AppCompatActivity {
                 languageCategBtn.startAnimation(scaleUp);
                 languageCategBtn.startAnimation(scaleDown);
             }
+        });
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+
+        bottomNavigationView.setSelectedItemId(R.id.bottom_quiz);
+
+        bottomNavigationView.setOnItemSelectedListener(item ->{
+            switch(item.getItemId()){
+                case R.id.bottom_quiz:
+                    return true;
+                case R.id.bottom_home:
+                    startActivity(new Intent(getApplicationContext(), homeActivity.class));
+                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_text:
+                    startActivity(new Intent(getApplicationContext(), textActivity.class));
+                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_voice:
+                    startActivity(new Intent(getApplicationContext(), voiceActivity.class));
+                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_image:
+                    startActivity(new Intent(getApplicationContext(), imageActivity.class));
+                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_left);
+                    finish();
+                    return true;
+            }
+            return false;
         });
     }
 
