@@ -38,8 +38,7 @@
         <ImageButton
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:background="@drawable/mic"
-            >
+            android:background="@drawable/mic">
 
         </ImageButton>
 
@@ -55,7 +54,7 @@
         android:layout_marginTop="10dp">
 
         <Button
-            android:id="@+id/sourceLanguageChooseBtn"
+            android:id="@+id/recordVoice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -68,15 +67,15 @@
 
     </LinearLayout>
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/sourceLanguageEt"
+        android:id="@+id/detectedText"
         android:fontFamily="@font/nunitobold"
         android:hint="Detected Text"
         android:layout_marginTop="10dp"
         android:minHeight="70dp"
-        android:gravity="start"
+        android:gravity="center"
         android:textSize="18dp"/>
 
 

@@ -268,6 +268,38 @@
         app1:itemRippleColor="@android:color/transparent"
         app1:labelVisibilityMode="unlabeled">
     </com.google.android.material.bottomnavigation.BottomNavigationView>
+    <!--
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/drawer_layout"
+        android:fitsSystemWindows="true"
+        tools:openDrawer="start"
+        tools:context=".homeActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/fragment_container"/>
+
+        </LinearLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/nav_view"
+            android:layout_gravity="start"
+            app1:headerLayout="@layout/nav_header"
+            app1:menu="@menu/nav_menu"
+            app1:itemIconTint="#EF9958"
+            app1:itemTextColor="#B2855D"/>
+
+    </androidx.drawerlayout.widget.DrawerLayout> -->
 
 </RelativeLayout>
 

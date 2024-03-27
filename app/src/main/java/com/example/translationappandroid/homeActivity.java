@@ -8,13 +8,21 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toolbar;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
-public class homeActivity extends AppCompatActivity {
+public class homeActivity extends AppCompatActivity{
+
+    private ImageView menuBtn;
+    private DrawerLayout drawerLayout;
 
     androidx.cardview.widget.CardView btn;
     androidx.cardview.widget.CardView btn2;

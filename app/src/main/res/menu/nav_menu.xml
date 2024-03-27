@@ -1,4 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn = "navigation_view">
+
+    <group
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/menu"
+            android:title="Home"/>
+
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/about"
+            android:title="About App"/>
+
+        <item
+            android:id="@+id/nav_language"
+            android:icon="@drawable/translate_logo"
+            android:title="Change Language"/>
+
+    </group>
+
+    <item
+        android:title="Extra Info">
+        <menu>
+            <item
+                android:title="Welcome To My Translation App  :)"/>
+
+        </menu>
+
+    </item>
+
 
 </menu>
