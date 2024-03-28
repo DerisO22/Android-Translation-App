@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     xmlns:app1="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="@color/plat"
     android:layout_height="match_parent"
     tools:context=".homeActivity"
     tools:ignore="NamespaceTypo">
@@ -83,11 +83,12 @@
             android:layout_height="wrap_content"
             android:id="@+id/sourceLanguageEt"
             android:fontFamily="@font/nunitobold"
-            android:hint="Enter Text Here"
             android:layout_marginTop="10dp"
             android:minHeight="70dp"
             android:gravity="start"
-            android:textSize="18dp"/>
+            android:textSize="18sp"
+            android:hint="Enter Text Here"
+            android:autofillHints="Enter Text Here" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/translateBtn"
