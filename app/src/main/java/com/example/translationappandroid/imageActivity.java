@@ -134,7 +134,7 @@ public class imageActivity extends AppCompatActivity {
 
         //Language Init and Progress
         progressDialog = new ProgressDialog(this);
-        progressDialog.setTitle("Getting Your Translation");
+        progressDialog.setTitle("Successfully Performed. Tap Outside To Close");
         progressDialog.setCanceledOnTouchOutside(true);
         loadAvailableLanguages();
 
