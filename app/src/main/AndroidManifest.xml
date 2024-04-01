@@ -20,6 +20,30 @@
         android:theme="@style/Theme.TranslationApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".enter_flags_splash"
+            android:exported="false" />
+        <activity
+            android:name=".enter_culture_splash"
+            android:exported="false" />
+        <activity
+            android:name=".enter_language_splash"
+            android:exported="false" />
+        <activity
+            android:name=".enter_geography_splash"
+            android:exported="false"/>
+        <activity
+            android:name=".activity_practice_language"
+            android:exported="false" />
+        <activity
+            android:name=".activity_practice_flags"
+            android:exported="false" />
+        <activity
+            android:name=".activity_practice_culture"
+            android:exported="false" />
+        <activity
+            android:name=".activity_practice_geo"
+            android:exported="false" />
+        <activity
             android:name=".homeActivity"
             android:exported="false" />
         <activity
@@ -35,7 +59,7 @@
             android:name=".textActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".enter_home_splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

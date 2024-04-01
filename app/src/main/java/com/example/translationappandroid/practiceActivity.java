@@ -44,6 +44,7 @@ public class practiceActivity extends AppCompatActivity {
             public void onClick(View v) {
                 cultureCategBtn.startAnimation(scaleUp);
                 cultureCategBtn.startAnimation(scaleDown);
+                startActivity(new Intent(getApplicationContext(), enter_culture_splash.class));
             }
         });
 
@@ -52,6 +53,7 @@ public class practiceActivity extends AppCompatActivity {
             public void onClick(View v) {
                 flagsCategBtn.startAnimation(scaleUp);
                 flagsCategBtn.startAnimation(scaleDown);
+                startActivity(new Intent(getApplicationContext(), enter_flags_splash.class));
             }
         });
 
@@ -60,6 +62,7 @@ public class practiceActivity extends AppCompatActivity {
             public void onClick(View v) {
                 geographyCategBtn.startAnimation(scaleUp);
                 geographyCategBtn.startAnimation(scaleDown);
+                startActivity(new Intent(getApplicationContext(), enter_geography_splash.class));
             }
         });
 
@@ -68,6 +71,7 @@ public class practiceActivity extends AppCompatActivity {
             public void onClick(View v) {
                 languageCategBtn.startAnimation(scaleUp);
                 languageCategBtn.startAnimation(scaleDown);
+                startActivity(new Intent(getApplicationContext(), enter_language_splash.class));
             }
         });
 

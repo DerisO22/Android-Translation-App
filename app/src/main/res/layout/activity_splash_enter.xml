@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#90D1CB"
+    tools:context=".enter_home_splash"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/no_border_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android App Name"
+            android:fontFamily="@font/nunitobold"
+            android:textSize="40sp"
+            android:layout_marginTop="15dp"
+            android:textFontWeight="900"
+            android:shadowColor="#9CF3C4C4"
+            android:shadowDx="10"
+            android:shadowDy="10"
+            android:shadowRadius="2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="By Deris"
+            android:fontFamily="@font/nunitobold"
+            android:textSize="20sp"
+            android:textFontWeight="900"
+            android:shadowColor="#9CF3C4C4"
+            android:shadowDx="10"
+            android:shadowDy="10"
+            android:shadowRadius="2">
+
+        </TextView>
+
+    </LinearLayout>
+
+
+</LinearLayout>

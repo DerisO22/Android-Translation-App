@@ -178,14 +178,6 @@
       </LinearLayout>
     </androidx.cardview.widget.CardView>
   </GridLayout>
-
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:background="@drawable/wave">
-
-  </LinearLayout>
-
   </LinearLayout>
 
   <com.google.android.material.bottomnavigation.BottomNavigationView
