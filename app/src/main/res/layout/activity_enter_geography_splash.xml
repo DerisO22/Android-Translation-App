@@ -32,16 +32,15 @@
             android:textFontWeight="900"/>
 
         <TextView
+            android:id="@+id/funFact_View"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:textAlignment="center"
-            android:text="Did You Know? \nAfrica is the only continent that covers four hemispheres"
+            android:text=""
             android:fontFamily="@font/nunitobold"
             android:textSize="20sp"
-            android:textFontWeight="900"
-            >
-
+            android:textFontWeight="900">
         </TextView>
 
     </LinearLayout>

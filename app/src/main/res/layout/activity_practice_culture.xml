@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_practice_geo"
+    android:background="#AAC8ED"
     android:orientation="vertical"
-    android:background="#AAC8ED">
+    tools:context=".activity_practice_geo">
 
     <LinearLayout
         android:id="@+id/topBar"
@@ -20,19 +20,19 @@
             android:id="@+id/exit_quiz"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/reject"/>
+            android:src="@drawable/reject" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:textAlignment="center"
-            android:text="Question: 1/25"
-            android:textColor="@color/white"
-            android:textSize="18sp"
             android:fontFamily="@font/nunitobold"
-            android:textFontWeight="800"/>
+            android:text="Question: 1/25"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textFontWeight="800"
+            android:textSize="18sp" />
 
 
     </LinearLayout>
@@ -47,30 +47,30 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Culture"
-            android:textSize="16dp"
             android:fontFamily="@font/nunitobold"
-            android:textFontWeight="900"/>
+            android:text="Culture"
+            android:textFontWeight="900"
+            android:textSize="16dp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"
         android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
         android:layout_marginTop="10dp"
-        android:orientation="vertical">
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical"
+        android:padding="20dp">
 
         <TextView
             android:id="@+id/question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Question"
             android:fontFamily="@font/nunitobold"
+            android:text="Question"
+            android:textAlignment="center"
             android:textFontWeight="900"
-            android:textSize="20sp"
-            android:textAlignment="center"/>
+            android:textSize="20sp" />
 
         <LinearLayout
             android:id="@+id/choices_Layout"
@@ -86,7 +86,7 @@
                 android:backgroundTint="@color/white"
                 android:text="Answer A"
                 android:textColor="@color/teal"
-                app:cornerRadius="10dp"/>
+                app:cornerRadius="10dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/ans_b"
@@ -95,7 +95,7 @@
                 android:backgroundTint="@color/white"
                 android:text="Answer B"
                 android:textColor="@color/teal"
-                app:cornerRadius="10dp"/>
+                app:cornerRadius="10dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/ans_c"
@@ -104,7 +104,7 @@
                 android:backgroundTint="@color/white"
                 android:text="Answer C"
                 android:textColor="@color/teal"
-                app:cornerRadius="10dp"/>
+                app:cornerRadius="10dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/ans_d"
@@ -113,7 +113,7 @@
                 android:backgroundTint="@color/white"
                 android:text="Answer D"
                 android:textColor="@color/teal"
-                app:cornerRadius="10dp"/>
+                app:cornerRadius="10dp" />
 
         </LinearLayout>
 
@@ -121,11 +121,11 @@
             android:id="@+id/submit_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#32DB3CE6"
             android:layout_marginTop="20dp"
+            android:backgroundTint="#32DB3CE6"
             android:text="Submit"
             android:textColor="@color/teal"
-            app:cornerRadius="8dp"/>
+            app:cornerRadius="8dp" />
 
     </LinearLayout>
 

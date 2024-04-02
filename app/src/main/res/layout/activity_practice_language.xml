@@ -23,12 +23,13 @@
             android:src="@drawable/reject"/>
 
         <TextView
+            android:id="@+id/total_questions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:text=""
             android:layout_weight="1"
             android:textAlignment="center"
-            android:text="Question: 1/25"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:fontFamily="@font/nunitobold"
@@ -47,7 +48,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Culture"
+            android:text="Language"
             android:textSize="16dp"
             android:fontFamily="@font/nunitobold"
             android:textFontWeight="900"/>

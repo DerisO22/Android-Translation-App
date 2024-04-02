@@ -31,17 +31,17 @@
             android:textFontWeight="900"/>
 
         <TextView
+            android:id="@+id/funFact_View"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:textAlignment="center"
-            android:text="Fun Fact! \nEurope consumes half of the world’s chocolate"
+            android:text=""
             android:fontFamily="@font/nunitobold"
             android:textSize="20sp"
             android:textFontWeight="900"
-            >
+            ></TextView>
 
-        </TextView>
 
     </LinearLayout>
 

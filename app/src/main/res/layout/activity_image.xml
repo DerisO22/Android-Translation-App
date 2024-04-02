@@ -6,7 +6,6 @@
     xmlns:app1="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="10dp"
-    android:background="@color/white"
     android:layout_height="match_parent"
     tools:context=".imageActivity"
     tools:ignore="NamespaceTypo">
@@ -31,7 +30,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="horizontal"
         android:gravity="center">
 
@@ -83,7 +82,7 @@
         <LinearLayout
             android:id="@+id/optionsLl"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
             android:weightSum="3"
             android:gravity="center"
@@ -128,6 +127,11 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/translateBtn"
             android:layout_width="match_parent"
@@ -154,7 +158,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp">
+            android:layout_height="160dp">
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:layout_width="match_parent"
@@ -173,6 +177,8 @@
             </com.google.android.material.bottomnavigation.BottomNavigationView>
 
         </RelativeLayout>
+
+        </LinearLayout>
     </LinearLayout>
 
 

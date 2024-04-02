@@ -31,16 +31,15 @@
             android:textFontWeight="900"/>
 
         <TextView
+            android:id="@+id/funFact_View"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:textAlignment="center"
-            android:textColor="#4E75AE"
-            android:text="On average, Americans tend to eat about 100 acres of pizza each day."
+            android:text=""
             android:fontFamily="@font/nunitobold"
             android:textSize="20sp"
             android:textFontWeight="900">
-
         </TextView>
 
     </LinearLayout>
