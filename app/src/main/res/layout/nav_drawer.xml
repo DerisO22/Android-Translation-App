@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:orientation="vertical"
+        android:gravity="bottom"
+        android:padding="16dp"
+        android:background="@drawable/menu_bkgsize3"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/monster"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="App Name"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunitobold"
+            android:textFontWeight="900"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Made By Deris O'Malley"
+            android:fontFamily="@font/nunitobold"
+            android:textColor="@color/black"
+            android:layout_marginBottom="16dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/teal"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/home"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/baseline_home_24"
+            android:drawablePadding="8dp"
+            android:text="Home"
+            android:fontFamily="@font/nunitobold"
+            android:textFontWeight="900"
+            android:textColor="@color/teal"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/about"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/about"
+            android:drawablePadding="8dp"
+            android:text="About"
+            android:fontFamily="@font/nunitobold"
+            android:textFontWeight="900"
+            android:textColor="@color/teal"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/teal"/>
+
+</LinearLayout>

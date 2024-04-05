@@ -14,8 +14,8 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/languages"
-        android:label="PhoniciTranslate"
-        android:roundIcon="@drawable/languages"
+        android:label="Translate App"
+        android:roundIcon="@drawable/no_border_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.TranslationApp"
         android:usesCleartextTraffic="true">
@@ -63,7 +63,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
