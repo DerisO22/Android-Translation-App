@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="7dp"
-        android:layout_marginTop="70dp">
+        android:layout_marginTop="30dp">
 
         <RelativeLayout
             android:layout_marginEnd="20dp"
@@ -66,7 +66,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:alignmentMode="alignMargins"
-            android:columnOrderPreserved="false">
+            android:columnOrderPreserved="false"
+            android:layout_marginTop="10dp">
 
 
             <androidx.cardview.widget.CardView
@@ -76,6 +77,7 @@
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app1:cardCornerRadius="12dp"
+                app1:cardElevation="5dp"
                 android:layout_margin="12dp">
 
                 <LinearLayout
@@ -83,7 +85,6 @@
                     android:padding="16dp"
                     android:gravity="center"
                     android:layout_width="match_parent"
-                    android:background="@drawable/bgquestion"
                     android:layout_height="match_parent">
 
                     <ImageView
@@ -111,6 +112,7 @@
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app1:cardCornerRadius="12dp"
+                app1:cardElevation="5dp"
                 android:layout_margin="12dp">
 
                 <LinearLayout
@@ -118,7 +120,6 @@
                     android:padding="16dp"
                     android:gravity="center"
                     android:layout_width="match_parent"
-                    android:background="@drawable/bgquestion"
                     android:layout_height="match_parent">
 
                     <ImageView
@@ -146,6 +147,7 @@
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app1:cardCornerRadius="12dp"
+                app1:cardElevation="5dp"
                 android:layout_margin="12dp">
 
                 <LinearLayout
@@ -153,7 +155,6 @@
                     android:padding="16dp"
                     android:gravity="center"
                     android:layout_width="match_parent"
-                    android:background="@drawable/bgquestion"
                     android:layout_height="match_parent">
 
                     <ImageView
@@ -181,14 +182,15 @@
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app1:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                app1:cardElevation="5dp"
+                android:layout_margin="12dp"
+                android:layout_marginBottom="10dp">
 
                 <LinearLayout
                     android:orientation="vertical"
                     android:padding="16dp"
                     android:gravity="center"
                     android:layout_width="match_parent"
-                    android:background="@drawable/bgquestion"
                     android:layout_height="match_parent">
 
                     <ImageView

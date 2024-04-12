@@ -3,9 +3,14 @@ package com.example.translationappandroid;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -15,7 +20,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class activity_practice_flags extends AppCompatActivity implements View.OnClickListener{
-    TextView questionTextView;
     TextView totalQuestionTextView;
     Button ansA,ansB,ansC,ansD;
     Button btn_submit;
@@ -24,9 +28,10 @@ public class activity_practice_flags extends AppCompatActivity implements View.O
     Animation scaleUp, scaleDown;
 
     int score=0;
-    int totalQuestion = question_flag.questions.length;
+    int totalQuestion = question_flag.correctAnswers.length;
     int currentQuestionIndex =0;
     String selectedAnswer="";
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -35,7 +40,7 @@ public class activity_practice_flags extends AppCompatActivity implements View.O
         setContentView(R.layout.activity_practice_language);
 
         totalQuestionTextView = findViewById(R.id.total_questions);
-        questionTextView = findViewById(R.id.question);
+        ImageView flagImage = findViewById(R.id.flagQuestionImage);
         ansA = findViewById(R.id.ans_a);
         ansB = findViewById(R.id.ans_b);
         ansC = findViewById(R.id.ans_c);
@@ -48,6 +53,8 @@ public class activity_practice_flags extends AppCompatActivity implements View.O
         ansC.setOnClickListener(this);
         ansD.setOnClickListener(this);
         btn_submit.setOnClickListener(this);
+
+        flagImage.setImageResource(R.drawable.united_states);
         loadNewQuestion();
 
         exitBtn = findViewById(R.id.exit_quiz);
@@ -72,7 +79,9 @@ public class activity_practice_flags extends AppCompatActivity implements View.O
             finishQuiz();
             return;
         }
-        questionTextView.setText(question_flag.questions[currentQuestionIndex]);
+        //Set Flag Image Doesn't work for some reason
+        //flagImage.setImageResource(R.drawable.united_states);
+
 
         ansA.setText(question_flag.choices[currentQuestionIndex][0]);
         ansB.setText(question_flag.choices[currentQuestionIndex][1]);

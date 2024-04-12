@@ -1,6 +1,7 @@
 package com.example.translationappandroid;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -10,6 +11,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
@@ -142,3 +144,4 @@ public class homeActivity extends AppCompatActivity {
         return false;
     }
 }
+

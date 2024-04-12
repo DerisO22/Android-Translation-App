@@ -64,11 +64,19 @@
             android:id="@+id/question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Question"
+            android:text="What flag is this?"
             android:fontFamily="@font/nunitobold"
             android:textFontWeight="900"
             android:textSize="20sp"
             android:textAlignment="center"/>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:id="@+id/flagQuestionImage"
+            android:src="@drawable/book_logo"/>
 
         <LinearLayout
             android:id="@+id/choices_Layout"

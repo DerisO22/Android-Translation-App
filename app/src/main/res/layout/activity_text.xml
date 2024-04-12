@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     xmlns:app1="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/plat"
+    android:background="@drawable/translate_bkg"
     android:layout_height="match_parent"
     tools:context=".homeActivity"
     tools:ignore="NamespaceTypo">
@@ -13,19 +13,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="20dp">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:layout_marginTop="20dp"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:textColor="@color/teal"
         android:gravity="center"
-        android:textStyle="bold"
+        android:textFontWeight="900"
         android:fontFamily="@font/nunitobold"
-        android:padding="4dp"
         android:text="Text Translation">
     </TextView>
 
@@ -36,7 +35,7 @@
         android:orientation="horizontal"
         android:weightSum="3"
         android:gravity="center"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="70dp">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/sourceLanguageChooseBtn"

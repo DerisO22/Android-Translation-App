@@ -1,13 +1,9 @@
 package com.example.translationappandroid;
 
+import android.graphics.drawable.Drawable;
+
 public class question_flag {
-    public static String questions []={
-            "Question 1",
-            "Question 2",
-            "Question 3",
-            "Question 4",
-            "Question 5"
-    };
+
     public static String choices [][]={
             {"A" , "B" , "C" , "D"},
             {"A" , "B" , "C" , "D"},

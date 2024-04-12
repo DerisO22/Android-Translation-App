@@ -123,7 +123,7 @@ public class activity_practice_culture extends AppCompatActivity implements View
                 currentQuestionIndex++;
                 loadNewQuestion();
             } else {
-
+                //Just do nothing
             }
         } else {
             selectedAnswer=clickedButton.getText().toString();
