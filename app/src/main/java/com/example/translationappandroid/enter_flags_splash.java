@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -13,6 +14,9 @@ public class enter_flags_splash extends AppCompatActivity {
 
     private TextView fun_fact;
     Random randomNum = new Random();
+    String flagName;
+    int id;
+    ImageView flagImage;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -23,6 +27,14 @@ public class enter_flags_splash extends AppCompatActivity {
         fun_fact = findViewById(R.id.funFact_View);
         int randomIndex = randomNum.nextInt(enter_practice_tipString.tips.length);
         fun_fact.setText(enter_practice_tipString.tips[randomIndex]);
+
+        flagImage = findViewById(R.id.flag_Image);
+
+        int randomFlagIndex = randomNum.nextInt(question_flag.images.length);
+
+        flagName = question_flag.images[randomFlagIndex];
+        id = getResources().getIdentifier(flagName, "drawable", getPackageName());
+        flagImage.setImageResource(id);
 
         Thread mSplashThread;
 

@@ -32,7 +32,7 @@ public class activity_practice_culture extends AppCompatActivity implements View
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_practice_language);
+        setContentView(R.layout.activity_practice_culture);
 
         totalQuestionTextView = findViewById(R.id.total_questions);
         questionTextView = findViewById(R.id.question);

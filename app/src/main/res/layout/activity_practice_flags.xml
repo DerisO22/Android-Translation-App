@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_practice_geo"
+    tools:context=".activity_practice_flags"
     android:orientation="vertical"
     android:background="#AAC8ED">
 
@@ -23,6 +23,7 @@
             android:src="@drawable/reject"/>
 
         <TextView
+            android:id="@+id/total_questions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -36,7 +37,6 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/midBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#B96C8CC7"
@@ -82,7 +82,7 @@
             android:id="@+id/choices_Layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:orientation="vertical">
 
             <com.google.android.material.button.MaterialButton

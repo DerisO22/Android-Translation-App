@@ -31,16 +31,21 @@ public class activity_practice_flags extends AppCompatActivity implements View.O
     int totalQuestion = question_flag.correctAnswers.length;
     int currentQuestionIndex =0;
     String selectedAnswer="";
+    ImageView flagImage;
+    String flagName;
+    int id=0;
+    Drawable drawable;
+
 
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_practice_language);
+        setContentView(R.layout.activity_practice_flags);
 
         totalQuestionTextView = findViewById(R.id.total_questions);
-        ImageView flagImage = findViewById(R.id.flagQuestionImage);
+        flagImage = findViewById(R.id.flagQuestionImage);
         ansA = findViewById(R.id.ans_a);
         ansB = findViewById(R.id.ans_b);
         ansC = findViewById(R.id.ans_c);
@@ -54,7 +59,6 @@ public class activity_practice_flags extends AppCompatActivity implements View.O
         ansD.setOnClickListener(this);
         btn_submit.setOnClickListener(this);
 
-        flagImage.setImageResource(R.drawable.united_states);
         loadNewQuestion();
 
         exitBtn = findViewById(R.id.exit_quiz);
@@ -79,8 +83,10 @@ public class activity_practice_flags extends AppCompatActivity implements View.O
             finishQuiz();
             return;
         }
-        //Set Flag Image Doesn't work for some reason
-        //flagImage.setImageResource(R.drawable.united_states);
+
+        flagName = question_flag.images[currentQuestionIndex];
+        id = getResources().getIdentifier(flagName, "drawable", getPackageName());
+        flagImage.setImageResource(id);
 
 
         ansA.setText(question_flag.choices[currentQuestionIndex][0]);

@@ -32,7 +32,7 @@ public class activity_practice_geo extends AppCompatActivity implements View.OnC
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_practice_language);
+        setContentView(R.layout.activity_practice_geo);
 
         totalQuestionTextView = findViewById(R.id.total_questions);
         questionTextView = findViewById(R.id.question);
