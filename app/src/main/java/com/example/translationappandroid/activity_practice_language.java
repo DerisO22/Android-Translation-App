@@ -42,6 +42,11 @@ public class activity_practice_language extends AppCompatActivity implements Vie
         ansD = findViewById(R.id.ans_d);
 
         btn_submit = findViewById(R.id.submit_btn);
+        btn_submit.setTransformationMethod(null);
+        ansA.setTransformationMethod(null);
+        ansB.setTransformationMethod(null);
+        ansC.setTransformationMethod(null);
+        ansD.setTransformationMethod(null);
 
         ansA.setOnClickListener(this);
         ansB.setOnClickListener(this);

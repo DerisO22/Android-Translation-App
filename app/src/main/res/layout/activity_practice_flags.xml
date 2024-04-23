@@ -83,6 +83,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:orientation="vertical">
 
             <com.google.android.material.button.MaterialButton
@@ -127,8 +129,10 @@
             android:id="@+id/submit_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#32DB3CE6"
+            android:backgroundTint="#E6D0F479"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
             android:text="Submit"
             android:textColor="@color/teal"
             app:cornerRadius="8dp"/>

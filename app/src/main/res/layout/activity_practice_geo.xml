@@ -27,15 +27,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:text=""
             android:layout_weight="1"
             android:textAlignment="center"
-            android:text="Question: 1/25"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:fontFamily="@font/nunitobold"
             android:textFontWeight="800"/>
-
-
     </LinearLayout>
 
     <LinearLayout
@@ -77,6 +75,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             android:orientation="vertical">
 
             <com.google.android.material.button.MaterialButton
@@ -86,6 +86,7 @@
                 android:backgroundTint="@color/white"
                 android:text="Answer A"
                 android:textColor="@color/teal"
+                android:fontFamily="@font/nunitobold"
                 app:cornerRadius="10dp"/>
 
             <com.google.android.material.button.MaterialButton
@@ -95,6 +96,7 @@
                 android:backgroundTint="@color/white"
                 android:text="Answer B"
                 android:textColor="@color/teal"
+                android:fontFamily="@font/nunitobold"
                 app:cornerRadius="10dp"/>
 
             <com.google.android.material.button.MaterialButton
@@ -104,6 +106,7 @@
                 android:backgroundTint="@color/white"
                 android:text="Answer C"
                 android:textColor="@color/teal"
+                android:fontFamily="@font/nunitobold"
                 app:cornerRadius="10dp"/>
 
             <com.google.android.material.button.MaterialButton
@@ -113,6 +116,7 @@
                 android:backgroundTint="@color/white"
                 android:text="Answer D"
                 android:textColor="@color/teal"
+                android:fontFamily="@font/nunitobold"
                 app:cornerRadius="10dp"/>
 
         </LinearLayout>
@@ -121,10 +125,13 @@
             android:id="@+id/submit_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#32DB3CE6"
-            android:layout_marginTop="20dp"
+            android:backgroundTint="#E6D0F479"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             android:text="Submit"
             android:textColor="@color/teal"
+            android:fontFamily="@font/nunitobold"
             app:cornerRadius="8dp"/>
 
     </LinearLayout>
