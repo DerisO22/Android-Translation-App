@@ -5,16 +5,16 @@
     android:layout_width="match_parent"
     xmlns:app1="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:fillViewport="true"
     tools:context=".imageActivity"
-    android:background="@color/teal"
+    android:background="#DADADA"
     tools:ignore="NamespaceTypo">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="#EEEFEF"
         android:padding="20dp"
         android:orientation="vertical">
 
@@ -27,7 +27,7 @@
             android:textFontWeight="950"
             android:text="Image Translation"
             android:textAlignment="center"
-            android:textColor="@color/teal"
+            android:textColor="@color/teal_700"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -35,7 +35,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_marginTop="5dp">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/inputImageBtn"
@@ -45,9 +46,13 @@
             android:layout_weight="1"
             android:fontFamily="@font/nunitobold"
             app1:icon="@drawable/baseline_add_a_photo_24"
-            android:textFontWeight="950"
+            app1:iconGravity="textStart"
+            android:padding="8dp"
+            android:textFontWeight="900"
+            android:backgroundTint="#B3539F"
+            android:textSize="15dp"
             app1:cornerRadius="5dp"
-            android:text="Upload Image"/>
+            android:text="Upload Img"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/recognizeTextBtn"
@@ -55,26 +60,33 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             app1:icon="@drawable/baseline_image_search_24"
+            app1:iconGravity="textStart"
             android:layout_weight="1"
+            android:padding="8dp"
+            android:backgroundTint="#B3539F"
             android:fontFamily="@font/nunitobold"
-            android:textFontWeight="950"
+            android:textFontWeight="900"
+            android:textSize="15dp"
             android:text="Extract Text"/>
     </LinearLayout>
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imageTv"
                 android:layout_width="match_parent"
+                android:padding="5dp"
                 android:layout_height="200dp"
-                android:src="@drawable/image_logo"
+                android:src="@drawable/photo"
                 android:adjustViewBounds="true"
-                app1:strokeWidth="2dp"/>
+                app1:strokeWidth="1dp"/>
 
             <TextView
-                style="@style/TextAppearance.MaterialComponents.Headline6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Recognized Text:"/>
+                android:textFontWeight="850"
+                android:textSize="20dp"
+                android:fontFamily="@font/nunitobold"
+                android:text="Recognized Text:" />
 
             <EditText
                 android:id="@+id/recognizedTextEt"
@@ -97,7 +109,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_margin="3dp"
-                android:textFontWeight="850"
+                android:textFontWeight="900"
+                android:textSize="15dp"
                 android:backgroundTint="@color/teal"
                 app1:icon="@drawable/baseline_arrow_drop_down_24"
                 app1:iconGravity="end"
@@ -120,7 +133,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_margin="3dp"
-                android:textFontWeight="850"
+                android:textFontWeight="900"
+                android:textSize="15dp"
                 android:backgroundTint="@color/teal"
                 app1:icon="@drawable/baseline_arrow_drop_down_24"
                 app1:iconGravity="end"
@@ -141,10 +155,15 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/nunitobold"
+            android:textSize="17dp"
+            android:textFontWeight="900"
             android:text="Translate"
+            app1:icon="@drawable/translate_logo"
+            app1:iconGravity="textStart"
+            android:padding="8dp"
             android:layout_marginTop="20dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginEnd="70dp"
             android:backgroundTint="#91C068"/>
 
         <TextView
@@ -169,8 +188,6 @@
                 android:id="@+id/bottomNavigationView"
                 android:layout_alignParentBottom="true"
                 android:background="@drawable/bottom_background"
-                android:layout_marginEnd="4dp"
-                android:layout_marginStart="4dp"
                 android:layout_marginBottom="17dp"
                 app1:menu="@menu/bottom_menu"
                 app1:itemIconSize="25dp"
@@ -178,12 +195,8 @@
                 app1:itemRippleColor="@android:color/transparent"
                 app1:labelVisibilityMode="unlabeled">
             </com.google.android.material.bottomnavigation.BottomNavigationView>
-
         </RelativeLayout>
-
         </LinearLayout>
     </LinearLayout>
-
-
 </ScrollView>
 

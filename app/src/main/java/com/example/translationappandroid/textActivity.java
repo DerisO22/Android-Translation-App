@@ -75,6 +75,10 @@ public class textActivity extends AppCompatActivity {
         destinationLanguageChooseBtn = findViewById(R.id.destinationLanguageChooseBtn);
         translateBtn = findViewById(R.id.translateBtn);
 
+        sourceLanguageChooseBtn.setTransformationMethod(null);
+        destinationLanguageChooseBtn.setTransformationMethod(null);
+        translateBtn.setTransformationMethod(null);
+
         //Animation
         scaleUp = AnimationUtils.loadAnimation(this,R.anim.scale_up);
         scaleDown = AnimationUtils.loadAnimation(this,R.anim.scale_down);

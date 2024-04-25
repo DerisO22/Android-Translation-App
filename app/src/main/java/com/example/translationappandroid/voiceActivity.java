@@ -84,6 +84,11 @@ public class voiceActivity extends AppCompatActivity {
         destinationLanguageChooseBtn = findViewById(R.id.destinationLanguageChooseBtn);
         translateBtn = findViewById(R.id.translateBtn);
 
+        getVoice.setTransformationMethod(null);
+        sourceLanguageChooseBtn.setTransformationMethod(null);
+        destinationLanguageChooseBtn.setTransformationMethod(null);
+        translateBtn.setTransformationMethod(null);
+
         //Language Init and Progress
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Getting Your Translation");

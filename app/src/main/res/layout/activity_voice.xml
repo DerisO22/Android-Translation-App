@@ -25,7 +25,7 @@
             android:textFontWeight="950"
             android:text="Voice Translation"
             android:textAlignment="center"
-            android:textColor="@color/teal"
+            android:textColor="@color/teal_700"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -35,9 +35,9 @@
         android:gravity="center">
 
         <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="@drawable/mic">
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:background="@drawable/audio_message">
 
         </ImageButton>
 
@@ -46,21 +46,22 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:weightSum="3"
-        android:gravity="center"
-        android:layout_marginTop="10dp">
+        android:gravity="center">
 
         <Button
             android:id="@+id/recordVoice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_margin="3dp"
-            android:text="Record Voice"
+            android:textSize="17dp"
+            android:text="Record"
+            android:backgroundTint="#B3539F"
+            app1:icon="@drawable/baseline_pause_circle_outline_24"
             android:fontFamily="@font/nunitobold"
             android:gravity="center"
-            android:padding="3dp"
+            android:padding="10dp"
             />
 
     </LinearLayout>
@@ -91,7 +92,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_margin="3dp"
-                android:textFontWeight="850"
+                android:textFontWeight="900"
+                android:textSize="15dp"
                 android:backgroundTint="@color/teal"
                 app1:icon="@drawable/baseline_arrow_drop_down_24"
                 app1:iconGravity="end"
@@ -115,7 +117,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_margin="3dp"
-                android:textFontWeight="850"
+                android:textFontWeight="900"
+                android:textSize="15dp"
                 android:backgroundTint="@color/teal"
                 app1:icon="@drawable/baseline_arrow_drop_down_24"
                 app1:iconGravity="end"
@@ -131,10 +134,16 @@
             android:layout_gravity="center"
             android:fontFamily="@font/nunitobold"
             android:text="Translate"
+            android:padding="8dp"
+            app1:icon="@drawable/translate_logo"
+            app1:iconGravity="textStart"
+            android:textSize="17sp"
+            android:textColor="@color/white"
+            android:textFontWeight="900"
             android:layout_marginTop="20dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"
-            android:backgroundTint="@color/teal"/>
+            android:layout_marginStart="70dp"
+            android:layout_marginEnd="70dp"
+            android:backgroundTint="@color/teal_700"/>
 
         <TextView
             android:id="@+id/destinationLanguageTv"
