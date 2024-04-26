@@ -163,6 +163,14 @@ public class imageActivity extends AppCompatActivity {
             }
         });
 
+        imageTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageTv.startAnimation(scaleUp);
+                imageTv.startAnimation(scaleDown);
+            }
+        });
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
         bottomNavigationView.setSelectedItemId(R.id.bottom_image);
@@ -222,7 +230,7 @@ public class imageActivity extends AppCompatActivity {
 
     private void recognizeTextFromImage(){
         //Extract Text From Image
-
+        //Use Exception Handling
         try {
             InputImage inputImage = InputImage.fromFilePath(this, imageUri);
 
@@ -253,8 +261,6 @@ public class imageActivity extends AppCompatActivity {
 
         popupMenu.getMenu().add(Menu.NONE, 1, 1, "CAMERA");
         popupMenu.getMenu().add(Menu.NONE, 2, 2, "Gallery");
-
-
         popupMenu.show();
 
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
@@ -281,7 +287,6 @@ public class imageActivity extends AppCompatActivity {
     }
 
     private void pickImageGallery(){
-
         Intent intent = new Intent(Intent.ACTION_PICK);
 
         intent.setType("image/*");
@@ -342,12 +347,10 @@ public class imageActivity extends AppCompatActivity {
     }
 
     private void requestStoragePermission(){
-
         ActivityCompat.requestPermissions(this, storagePermissions, STORAGE_REQUEST_CODE);
     }
 
     private boolean checkCameraPermissions(){
-
         boolean cameraResult = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == (PackageManager.PERMISSION_GRANTED);
         boolean storageResult = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == (PackageManager.PERMISSION_GRANTED);
 
@@ -408,7 +411,6 @@ public class imageActivity extends AppCompatActivity {
     }
 
     private void startTranslations() {
-
         progressDialog.setMessage("Processing Language Model . . .");
         progressDialog.show();
 
@@ -462,13 +464,11 @@ public class imageActivity extends AppCompatActivity {
     }
 
     private void sourceLanguageChoose(){
-
         androidx.appcompat.widget.PopupMenu popupMenu = new androidx.appcompat.widget.PopupMenu(this, sourceLanguageChooseBtn);
 
         for(int i=0; i<languageArrayList.size();i++){
             popupMenu.getMenu().add(Menu.NONE,i,i,languageArrayList.get(i).languageTitle);
         }
-
         popupMenu.show();
 
         popupMenu.setOnMenuItemClickListener(new androidx.appcompat.widget.PopupMenu.OnMenuItemClickListener() {
@@ -496,8 +496,6 @@ public class imageActivity extends AppCompatActivity {
 
         for(int i=0;i<languageArrayList.size();i++){
             popupMenu.getMenu().add(Menu.NONE,i,i,languageArrayList.get(i).getLanguageTitle());
-
-
             popupMenu.show();
 
             popupMenu.setOnMenuItemClickListener(new androidx.appcompat.widget.PopupMenu.OnMenuItemClickListener() {

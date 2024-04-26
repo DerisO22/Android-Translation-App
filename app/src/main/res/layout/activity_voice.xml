@@ -35,6 +35,7 @@
         android:gravity="center">
 
         <ImageButton
+            android:id="@+id/topImage"
             android:layout_width="130dp"
             android:layout_height="130dp"
             android:background="@drawable/audio_message">

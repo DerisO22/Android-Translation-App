@@ -3,6 +3,7 @@ package com.example.translationappandroid;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.PopupMenu;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Build;
@@ -17,6 +18,7 @@ import android.view.animation.AnimationUtils;
 import android.view.translation.Translator;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,6 +47,7 @@ public class textActivity extends AppCompatActivity {
     private Button sourceLanguageChooseBtn;
     private Button destinationLanguageChooseBtn;
     private Button translateBtn;
+    private ImageView topImage;
 
     private TranslatorOptions translatorOptions;
     private Translator translator;
@@ -62,6 +65,7 @@ public class textActivity extends AppCompatActivity {
     //Animation
     Animation scaleUp, scaleDown;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +78,7 @@ public class textActivity extends AppCompatActivity {
         sourceLanguageChooseBtn = findViewById(R.id.sourceLanguageChooseBtn);
         destinationLanguageChooseBtn = findViewById(R.id.destinationLanguageChooseBtn);
         translateBtn = findViewById(R.id.translateBtn);
+        topImage = findViewById(R.id.imageTop);
 
         sourceLanguageChooseBtn.setTransformationMethod(null);
         destinationLanguageChooseBtn.setTransformationMethod(null);
@@ -143,6 +148,14 @@ public class textActivity extends AppCompatActivity {
                 translateBtn.startAnimation(scaleUp);
                 translateBtn.startAnimation(scaleDown);
                 validateData();
+            }
+        });
+
+        topImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                topImage.startAnimation(scaleUp);
+                topImage.startAnimation(scaleDown);
             }
         });
     }

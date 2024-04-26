@@ -15,6 +15,7 @@ import android.view.animation.AnimationUtils;
 import android.view.translation.Translator;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -51,6 +52,7 @@ public class voiceActivity extends AppCompatActivity {
     private Translator translator;
     private ProgressDialog progressDialog;
     private ArrayList<ModelLanguage> languageArrayList;
+    private ImageView topImage;
 
     private static final String TAG = "MAIN_TAG";
 
@@ -59,8 +61,6 @@ public class voiceActivity extends AppCompatActivity {
     private String sourceLanguageTitle = "English";
     private String destinationLanguageCode = "de";
     private String destinationLanguageTitle = "German";
-
-
 
     Animation scaleUp, scaleDown;
 
@@ -83,6 +83,7 @@ public class voiceActivity extends AppCompatActivity {
         sourceLanguageChooseBtn = findViewById(R.id.sourceLanguageChooseBtn);
         destinationLanguageChooseBtn = findViewById(R.id.destinationLanguageChooseBtn);
         translateBtn = findViewById(R.id.translateBtn);
+        topImage = findViewById(R.id.topImage);
 
         getVoice.setTransformationMethod(null);
         sourceLanguageChooseBtn.setTransformationMethod(null);
@@ -156,6 +157,14 @@ public class voiceActivity extends AppCompatActivity {
                 translateBtn.startAnimation(scaleUp);
                 translateBtn.startAnimation(scaleDown);
                 validateData();
+            }
+        });
+
+        topImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                topImage.startAnimation(scaleUp);
+                topImage.startAnimation(scaleDown);
             }
         });
     }
