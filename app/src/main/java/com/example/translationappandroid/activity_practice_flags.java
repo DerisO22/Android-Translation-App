@@ -36,8 +36,6 @@ public class activity_practice_flags extends AppCompatActivity implements View.O
     int id=0;
     Drawable drawable;
 
-
-
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState){

@@ -51,8 +51,8 @@ public class homeActivity extends AppCompatActivity {
         scaleUp = AnimationUtils.loadAnimation(this,R.anim.scale_up);
         scaleDown = AnimationUtils.loadAnimation(this,R.anim.scale_down);
 
+        //Bottom Navigation Panel
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-
         bottomNavigationView.setSelectedItemId(R.id.bottom_home);
 
         bottomNavigationView.setOnItemSelectedListener(item ->{

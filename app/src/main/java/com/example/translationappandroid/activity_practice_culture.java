@@ -41,6 +41,7 @@ public class activity_practice_culture extends AppCompatActivity implements View
         ansC = findViewById(R.id.ans_c);
         ansD = findViewById(R.id.ans_d);
 
+        //Dont Allow the Button and Text design to be affected
         btn_submit = findViewById(R.id.submit_btn);
         btn_submit.setTransformationMethod(null);
         ansA.setTransformationMethod(null);
@@ -60,6 +61,7 @@ public class activity_practice_culture extends AppCompatActivity implements View
         scaleUp = AnimationUtils.loadAnimation(this,R.anim.scale_up);
         scaleDown = AnimationUtils.loadAnimation(this,R.anim.scale_down);
 
+        //Exit Test Page
         exitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,6 +73,7 @@ public class activity_practice_culture extends AppCompatActivity implements View
         });
     }
 
+    //Load 4 Questions for each question page
     private void loadNewQuestion(){
         totalQuestionTextView.setText("Question: " + (currentQuestionIndex+1) + "/" + totalQuestion);
         if(currentQuestionIndex==totalQuestion){
@@ -87,6 +90,7 @@ public class activity_practice_culture extends AppCompatActivity implements View
         selectedAnswer="";
     }
 
+    //End the quiz and return user's result(test/fail)
     private void finishQuiz(){
         String passStatus;
         if(score >= totalQuestion*0.6){
@@ -102,6 +106,7 @@ public class activity_practice_culture extends AppCompatActivity implements View
                 .show();
     }
 
+    //Reset the quiz when finished and return to question 1
     private void restartQuiz(){
         score = 0;
         currentQuestionIndex = 0;
@@ -109,6 +114,7 @@ public class activity_practice_culture extends AppCompatActivity implements View
         loadNewQuestion();
     }
 
+    //Handle which answer button is clicked
     @Override
     public void onClick(View view){
         ansA.setBackgroundColor(Color.WHITE);
@@ -131,6 +137,7 @@ public class activity_practice_culture extends AppCompatActivity implements View
                 //Just do nothing
             }
         } else {
+            //Change answer to string to be compared to correct answer
             selectedAnswer=clickedButton.getText().toString();
             clickedButton.setBackgroundColor(Color.BLUE);
         }
