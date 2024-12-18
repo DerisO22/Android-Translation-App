@@ -23,7 +23,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Android App Name"
+            android:text="Phonici"
             android:fontFamily="@font/nunitobold"
             android:textSize="40sp"
             android:layout_marginTop="15dp"

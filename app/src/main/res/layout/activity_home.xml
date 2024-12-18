@@ -6,6 +6,7 @@
     xmlns:app1="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@drawable/home_roundbg"
+    android:textColor="@color/teal"
     android:layout_height="match_parent"
     tools:context=".homeActivity"
     tools:ignore="NamespaceTypo">
@@ -21,6 +22,7 @@
             android:layout_marginEnd="20dp"
             android:layout_marginStart="20dp"
             android:layout_width="match_parent"
+            android:textColor="@color/teal"
             android:layout_height="wrap_content">
 
             <TextView
@@ -30,7 +32,7 @@
                 android:layout_marginEnd="20dp"
                 android:fontFamily="@font/nunitobold"
                 android:textColor="@color/teal"
-                android:textSize="28sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 android:textFontWeight="950"
                 android:text="Translation Home" />
@@ -51,8 +53,8 @@
             <ImageView
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="20dp"
-                android:layout_width="57dp"
-                android:layout_height="57dp"
+                android:layout_width="37dp"
+                android:layout_height="37dp"
                 android:background="@drawable/home_button"/>
         </RelativeLayout>
 
@@ -65,7 +67,7 @@
             android:columnOrderPreserved="false"
             android:layout_marginTop="10dp">
 
-
+            <!-- Top Left -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/button1"
                 android:layout_width="100dp"
@@ -74,7 +76,8 @@
                 android:layout_rowWeight="1"
                 app1:cardCornerRadius="12dp"
                 app1:cardElevation="5dp"
-                android:layout_margin="12dp">
+                android:layout_margin="12dp"
+                android:backgroundTint="@color/white">
 
                 <LinearLayout
                     android:orientation="vertical"
@@ -94,13 +97,12 @@
                         android:textSize="16sp"
                         android:text="Text Translation"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/teal"/>
                 </LinearLayout>
-
             </androidx.cardview.widget.CardView>
 
+            <!-- Top Right -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/button2"
                 android:layout_width="100dp"
@@ -109,7 +111,8 @@
                 android:layout_rowWeight="1"
                 app1:cardCornerRadius="12dp"
                 app1:cardElevation="5dp"
-                android:layout_margin="12dp">
+                android:layout_margin="12dp"
+                android:backgroundTint="@color/white">
 
                 <LinearLayout
                     android:orientation="vertical"
@@ -129,13 +132,12 @@
                         android:textSize="16sp"
                         android:text="Voice Translation"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/teal"/>
                 </LinearLayout>
-
             </androidx.cardview.widget.CardView>
 
+            <!-- Bottom Left -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/button3"
                 android:layout_width="100dp"
@@ -144,7 +146,8 @@
                 android:layout_rowWeight="1"
                 app1:cardCornerRadius="12dp"
                 app1:cardElevation="5dp"
-                android:layout_margin="12dp">
+                android:layout_margin="12dp"
+                android:backgroundTint="@color/white">
 
                 <LinearLayout
                     android:orientation="vertical"
@@ -164,13 +167,12 @@
                         android:textSize="16sp"
                         android:text="Image Translation"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/teal"/>
                 </LinearLayout>
-
             </androidx.cardview.widget.CardView>
 
+            <!-- Bottom Right -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/button4"
                 android:layout_width="100dp"
@@ -180,7 +182,8 @@
                 app1:cardCornerRadius="12dp"
                 app1:cardElevation="5dp"
                 android:layout_margin="12dp"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/white">
 
                 <LinearLayout
                     android:orientation="vertical"
@@ -200,13 +203,10 @@
                         android:textSize="16sp"
                         android:text="Practice Zone"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/teal"/>
                 </LinearLayout>
-
             </androidx.cardview.widget.CardView>
-
         </GridLayout>
 
         <LinearLayout
@@ -223,7 +223,8 @@
                 android:textFontWeight="950"
                 android:text="Welcome to [App Name]❗❗"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:textColor="@color/teal"/>
 
         </LinearLayout>
 
@@ -240,7 +241,8 @@
                 android:textFontWeight="950"
                 android:text="Supporting over 50 languages. Handy for fast and accurate text, voice, and image translations. Practice your cultural knowledge and better understand different nations in the Practice Zone."
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:textColor="@color/teal"/>
 
         </LinearLayout>
 

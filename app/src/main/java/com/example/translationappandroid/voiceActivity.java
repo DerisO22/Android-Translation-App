@@ -14,7 +14,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.translation.Translator;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,7 +50,7 @@ public class voiceActivity extends AppCompatActivity {
     private TranslatorOptions translatorOptions;
     private Translator translator;
     private ProgressDialog progressDialog;
-    private ArrayList<ModelLanguage> languageArrayList;
+    private static ArrayList<ModelLanguage> languageArrayList; // Static variable to hold languages
     private ImageView topImage;
 
     private static final String TAG = "MAIN_TAG";
@@ -85,6 +84,11 @@ public class voiceActivity extends AppCompatActivity {
         translateBtn = findViewById(R.id.translateBtn);
         topImage = findViewById(R.id.topImage);
 
+        // Initialize languageArrayList if it is null
+        if (languageArrayList == null) {
+            loadAvailableLanguages();
+        }
+
         getVoice.setTransformationMethod(null);
         sourceLanguageChooseBtn.setTransformationMethod(null);
         destinationLanguageChooseBtn.setTransformationMethod(null);
@@ -94,7 +98,6 @@ public class voiceActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Getting Your Translation");
         progressDialog.setCanceledOnTouchOutside(false);
-        loadAvailableLanguages();
 
         //Animation
         scaleUp = AnimationUtils.loadAnimation(this,R.anim.scale_up);
@@ -129,49 +132,27 @@ public class voiceActivity extends AppCompatActivity {
             return false;
         });
 
-        getVoice.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                speak();
-            }
-        });
+        getVoice.setOnClickListener(v -> speak());
 
         //Voice Translation
-        sourceLanguageChooseBtn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                sourceLanguageChoose();
-            }
+        sourceLanguageChooseBtn.setOnClickListener(v -> sourceLanguageChoose());
+
+        destinationLanguageChooseBtn.setOnClickListener(v -> destinationLanguageChoose());
+
+        translateBtn.setOnClickListener(v -> {
+            translateBtn.startAnimation(scaleUp);
+            translateBtn.startAnimation(scaleDown);
+            validateData();
         });
 
-        destinationLanguageChooseBtn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                destinationLanguageChoose();
-            }
-        });
-
-        translateBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                translateBtn.startAnimation(scaleUp);
-                translateBtn.startAnimation(scaleDown);
-                validateData();
-            }
-        });
-
-        topImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                topImage.startAnimation(scaleUp);
-                topImage.startAnimation(scaleDown);
-            }
+        topImage.setOnClickListener(v -> {
+            topImage.startAnimation(scaleUp);
+            topImage.startAnimation(scaleDown);
         });
     }
 
     public String sourceLanguageText = "";
     private void validateData() {
-
         sourceLanguageText = detectedText.getText().toString().trim();
 
         if(sourceLanguageText.isEmpty()){
@@ -182,7 +163,6 @@ public class voiceActivity extends AppCompatActivity {
     }
 
     private void startTranslations() {
-
         progressDialog.setMessage("Processing Language Model . . .");
         progressDialog.show();
 
@@ -193,93 +173,74 @@ public class voiceActivity extends AppCompatActivity {
 
         final com.google.mlkit.nl.translate.Translator translator = Translation.getClient(translatorOptions);
 
-
         DownloadConditions downloadConditions = new DownloadConditions.Builder()
                 .requireWifi()
                 .build();
 
         translator.downloadModelIfNeeded(downloadConditions)
-                .addOnSuccessListener(new OnSuccessListener<Void>(){
-                    @Override
-                    public void onSuccess(Void unused) {
-                        Log.d(TAG, "onSuccess: model ready, starting translate. . .");
+                .addOnSuccessListener(unused -> {
+                    Log.d(TAG, "onSuccess: model ready, starting translate. . .");
 
-                        progressDialog.show();
-                        translator.translate(sourceLanguageText)
-                                .addOnSuccessListener(new OnSuccessListener<String>(){
-                                    @Override
-                                    public void onSuccess(String translatedText) {
-                                        //Successfully Translated
-                                        Log.d(TAG, "onSuccess: translatedText: "+translatedText);
-                                        progressDialog.dismiss();
-                                        destinationLanguageTv.setText(translatedText);
-                                    }
-                                })
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        progressDialog.dismiss();
-                                        Toast.makeText(voiceActivity.this, "Failed to translate due to "+e.getMessage(), Toast.LENGTH_SHORT).show();
-                                    }
-                                });
-                    }
+                    progressDialog.show();
+                    translator.translate(sourceLanguageText)
+                            .addOnSuccessListener(translatedText -> {
+                                //Successfully Translated
+                                Log.d(TAG, "onSuccess: translatedText: " + translatedText);
+                                progressDialog.dismiss();
+                                destinationLanguageTv.setText(translatedText);
+                            })
+                            .addOnFailureListener(e -> {
+                                progressDialog.dismiss();
+                                Toast.makeText(voiceActivity.this, "Failed to translate due to " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            });
                 })
-                .addOnFailureListener(new OnFailureListener(){
-                    @Override
-                    public void onFailure(@NonNull Exception e){
-                        progressDialog.dismiss();
-                        Toast.makeText(voiceActivity.this, "Failed to ready model due to "+e.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
+                .addOnFailureListener(e -> {
+                    progressDialog.dismiss();
+                    Toast.makeText(voiceActivity.this, "Failed to ready model due to " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 });
     }
 
-    private void sourceLanguageChoose(){
-
+    private void sourceLanguageChoose() {
         PopupMenu popupMenu = new PopupMenu(this, sourceLanguageChooseBtn);
 
-        for(int i=0; i<languageArrayList.size();i++){
-            popupMenu.getMenu().add(Menu.NONE,i,i,languageArrayList.get(i).languageTitle);
+        for(int i = 0; i < languageArrayList.size(); i++){
+            popupMenu.getMenu().add(Menu.NONE, i, i, languageArrayList.get(i).languageTitle);
         }
 
         popupMenu.show();
 
-        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                int position = item.getItemId();
+        popupMenu.setOnMenuItemClickListener(item -> {
+            int position = item.getItemId();
 
-                sourceLanguageCode = languageArrayList.get(position).languageCode;
-                sourceLanguageTitle = languageArrayList.get(position).languageTitle;
+            sourceLanguageCode = languageArrayList.get(position).languageCode;
+            sourceLanguageTitle = languageArrayList.get(position).languageTitle;
 
-                sourceLanguageChooseBtn.setText(sourceLanguageTitle);
+            sourceLanguageChooseBtn.setText(sourceLanguageTitle);
 
-                Log.d(TAG, "OnMenuItemClick: sourceLanguageCode "+sourceLanguageCode);
-                Log.d(TAG, "OnMenuItemClick: sourceLanguageTitle "+sourceLanguageTitle);
+            Log.d(TAG, "OnMenuItemClick: sourceLanguageCode " + sourceLanguageCode);
+            Log.d(TAG, "OnMenuItemClick: sourceLanguageTitle " + sourceLanguageTitle);
 
-                return false;
-            }
+            return false;
         });
     }
 
-    private void destinationLanguageChoose(){
+    private void destinationLanguageChoose() {
         PopupMenu popupMenu = new PopupMenu(this, destinationLanguageChooseBtn);
 
-        for(int i=0;i<languageArrayList.size();i++){
-            popupMenu.getMenu().add(Menu.NONE,i,i,languageArrayList.get(i).getLanguageTitle());
-            popupMenu.show();
-            popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                @Override
-                public boolean onMenuItemClick(MenuItem item) {
-                    int position = item.getItemId();
-                    destinationLanguageCode = languageArrayList.get(position).languageCode;
-                    destinationLanguageTitle = languageArrayList.get(position).languageTitle;
-                    destinationLanguageChooseBtn.setText(destinationLanguageTitle);
-                    Log.d(TAG, "onMenuItemClick: destinationLanguageCode: "+destinationLanguageCode);
-                    Log.d(TAG, "onMenuItemClick: destinationLanguageTitle: "+destinationLanguageTitle);
-                    return false;
-                }
-            });
+        for(int i = 0; i < languageArrayList.size(); i++){
+            popupMenu.getMenu().add(Menu.NONE, i, i, languageArrayList.get(i).getLanguageTitle());
         }
+        popupMenu.show();
+
+        popupMenu.setOnMenuItemClickListener(item -> {
+            int position = item.getItemId();
+            destinationLanguageCode = languageArrayList.get(position).languageCode;
+            destinationLanguageTitle = languageArrayList.get(position).languageTitle;
+            destinationLanguageChooseBtn.setText(destinationLanguageTitle);
+            Log.d(TAG, "onMenuItemClick: destinationLanguageCode: " + destinationLanguageCode);
+            Log.d(TAG, "onMenuItemClick: destinationLanguageTitle: " + destinationLanguageTitle);
+            return false;
+        });
     }
 
     //Load Popupmenus with all available languages
@@ -289,8 +250,8 @@ public class voiceActivity extends AppCompatActivity {
 
         for(String languageCode: languageCodeList){
             String languageTitle = new Locale(languageCode).getDisplayLanguage();
-            Log.d(TAG, "LoadAvailableLanguages: languageCode: "+languageCode);
-            Log.d(TAG, "LoadAvailableLanguages: languageTitle: "+languageTitle);
+            Log.d(TAG, "LoadAvailableLanguages: languageCode: " + languageCode);
+            Log.d(TAG, "LoadAvailableLanguages: languageTitle: " + languageTitle);
 
             ModelLanguage modelLanguage = new ModelLanguage(languageCode, languageTitle);
             languageArrayList.add(modelLanguage);
@@ -308,7 +269,7 @@ public class voiceActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==100 && resultCode== RESULT_OK){
+        if(requestCode == 100 && resultCode == RESULT_OK){
             detectedText.setText(Objects.requireNonNull(Objects.requireNonNull(data).getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)).get(0));
         }
     }
@@ -323,10 +284,10 @@ public class voiceActivity extends AppCompatActivity {
             case MotionEvent.ACTION_UP:
                 x2 = touchEvent.getX();
                 y2 = touchEvent.getY();
-                if(x1+150 < x2){
+                if(x1 + 150 < x2){
                     Intent i = new Intent(voiceActivity.this, textActivity.class);
                     startActivity(i);
-                }else if(x1-150 > x2){
+                } else if(x1 - 150 > x2){
                     Intent i = new Intent(voiceActivity.this, imageActivity.class);
                     startActivity(i);
                 }

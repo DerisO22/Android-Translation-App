@@ -31,68 +31,68 @@
             android:textSize="24sp"
             android:textStyle="bold" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginTop="5dp">
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/inputImageBtn"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
-            android:layout_weight="1"
-            android:fontFamily="@font/nunitobold"
-            app1:icon="@drawable/baseline_add_a_photo_24"
-            app1:iconGravity="textStart"
-            android:padding="8dp"
-            android:textFontWeight="900"
-            android:backgroundTint="#B3539F"
-            android:textSize="15dp"
-            app1:cornerRadius="5dp"
-            android:text="Upload Img"/>
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="5dp">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/recognizeTextBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            app1:icon="@drawable/baseline_image_search_24"
-            app1:iconGravity="textStart"
-            android:layout_weight="1"
-            android:padding="8dp"
-            android:backgroundTint="#B3539F"
-            android:fontFamily="@font/nunitobold"
-            android:textFontWeight="900"
-            android:textSize="15dp"
-            android:text="Extract Text"/>
-    </LinearLayout>
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageTv"
-                android:layout_width="match_parent"
-                android:padding="5dp"
-                android:layout_height="200dp"
-                android:src="@drawable/photo"
-                android:adjustViewBounds="true"
-                app1:strokeWidth="1dp"/>
-
-            <TextView
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/inputImageBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textFontWeight="850"
-                android:textSize="20dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
                 android:fontFamily="@font/nunitobold"
-                android:text="Recognized Text:" />
+                app1:icon="@drawable/baseline_add_a_photo_24"
+                app1:iconGravity="textStart"
+                android:padding="8dp"
+                android:textFontWeight="900"
+                android:backgroundTint="#B3539F"
+                android:textSize="15dp"
+                app1:cornerRadius="5dp"
+                android:text="Upload Img"/>
 
-            <EditText
-                android:id="@+id/recognizedTextEt"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/recognizeTextBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"/>
+                android:layout_marginStart="5dp"
+                app1:icon="@drawable/baseline_image_search_24"
+                app1:iconGravity="textStart"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:backgroundTint="#B3539F"
+                android:fontFamily="@font/nunitobold"
+                android:textFontWeight="900"
+                android:textSize="15dp"
+                android:text="Extract Text"/>
+        </LinearLayout>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageTv"
+            android:layout_width="match_parent"
+            android:padding="5dp"
+            android:layout_height="200dp"
+            android:src="@drawable/photo"
+            android:adjustViewBounds="true"
+            app1:strokeWidth="1dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textFontWeight="850"
+            android:textSize="20dp"
+            android:fontFamily="@font/nunitobold"
+            android:text="Recognized Text:" />
+
+        <EditText
+            android:id="@+id/recognizedTextEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"/>
 
         <LinearLayout
             android:id="@+id/optionsLl"
@@ -149,54 +149,53 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/translateBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/nunitobold"
-            android:textSize="17dp"
-            android:textFontWeight="900"
-            android:text="Translate"
-            app1:icon="@drawable/translate_logo"
-            app1:iconGravity="textStart"
-            android:padding="8dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="70dp"
-            android:layout_marginEnd="70dp"
-            android:backgroundTint="@color/teal_700"/>
-
-        <TextView
-            android:id="@+id/destinationLanguageTv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/nunitobold"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:text="Translated Text"/>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="160dp">
-
-            <com.google.android.material.bottomnavigation.BottomNavigationView
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/translateBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/bottomNavigationView"
-                android:layout_alignParentBottom="true"
-                android:background="@drawable/bottom_background"
-                android:layout_marginBottom="17dp"
-                app1:menu="@menu/bottom_menu"
-                app1:itemIconSize="25dp"
-                app1:itemIconTint="@drawable/item_selector"
-                app1:itemRippleColor="@android:color/transparent"
-                app1:labelVisibilityMode="unlabeled">
-            </com.google.android.material.bottomnavigation.BottomNavigationView>
-        </RelativeLayout>
+                android:layout_gravity="center"
+                android:fontFamily="@font/nunitobold"
+                android:textSize="17dp"
+                android:textFontWeight="900"
+                android:text="Translate"
+                app1:icon="@drawable/translate_logo"
+                app1:iconGravity="textStart"
+                android:padding="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="70dp"
+                android:layout_marginEnd="70dp"
+                android:backgroundTint="@color/teal_700"/>
+
+            <TextView
+                android:id="@+id/destinationLanguageTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/nunitobold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:text="Translated Text"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp">
+
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bottomNavigationView"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/bottom_background"
+                    android:layout_marginBottom="17dp"
+                    app1:menu="@menu/bottom_menu"
+                    app1:itemIconSize="25dp"
+                    app1:itemIconTint="@drawable/item_selector"
+                    app1:itemRippleColor="@android:color/transparent"
+                    app1:labelVisibilityMode="unlabeled">
+                </com.google.android.material.bottomnavigation.BottomNavigationView>
+            </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
-
