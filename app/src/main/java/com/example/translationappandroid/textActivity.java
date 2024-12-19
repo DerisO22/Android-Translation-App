@@ -9,9 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.MotionEvent;
-import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -20,8 +18,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.mlkit.common.model.DownloadConditions;
 import com.google.mlkit.nl.translate.TranslateLanguage;
@@ -103,22 +99,22 @@ public class textActivity extends AppCompatActivity {
                     return true;
                 case R.id.bottom_home:
                     startActivity(new Intent(getApplicationContext(), homeActivity.class));
-                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_left);
+//                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_left);
                     finish();
                     return true;
                 case R.id.bottom_voice:
                     startActivity(new Intent(getApplicationContext(), voiceActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right);
+//                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right);
                     finish();
                     return true;
                 case R.id.bottom_image:
                     startActivity(new Intent(getApplicationContext(), imageActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right);
+//                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right);
                     finish();
                     return true;
                 case R.id.bottom_quiz:
                     startActivity(new Intent(getApplicationContext(), practiceActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right);
+//                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right);
                     finish();
                     return true;
             }

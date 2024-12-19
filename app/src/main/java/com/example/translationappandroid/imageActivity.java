@@ -186,22 +186,22 @@ public class imageActivity extends AppCompatActivity {
                     return true;
                 case R.id.bottom_home:
                     startActivity(new Intent(getApplicationContext(), homeActivity.class));
-                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_left);
+//                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_left);
                     finish();
                     return true;
                 case R.id.bottom_text:
                     startActivity(new Intent(getApplicationContext(), textActivity.class));
-                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_left);
+//                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_left);
                     finish();
                     return true;
                 case R.id.bottom_voice:
                     startActivity(new Intent(getApplicationContext(), voiceActivity.class));
-                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_left);
+//                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_left);
                     finish();
                     return true;
                 case R.id.bottom_quiz:
                     startActivity(new Intent(getApplicationContext(), practiceActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right);
+//                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right);
                     finish();
                     return true;
             }

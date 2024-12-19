@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#90D1CB"
+    android:background="#90A6D1"
     tools:context=".enter_home_splash"
     android:orientation="horizontal">
 

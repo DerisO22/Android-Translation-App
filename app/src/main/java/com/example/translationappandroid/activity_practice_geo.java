@@ -14,23 +14,29 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class activity_practice_geo extends AppCompatActivity implements View.OnClickListener{
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class activity_practice_geo extends AppCompatActivity implements View.OnClickListener {
     TextView questionTextView;
     TextView totalQuestionTextView;
-    Button ansA,ansB,ansC,ansD;
+    Button ansA, ansB, ansC, ansD;
     Button btn_submit;
 
     private ImageView exitBtn;
     Animation scaleUp, scaleDown;
 
-    int score=0;
-    int totalQuestion = question_geo.questions.length;
-    int currentQuestionIndex =0;
-    String selectedAnswer="";
+    int score = 0;
+    int totalQuestion = 20;
+    int currentQuestionIndex = 0;
+    String selectedAnswer = "";
+
+    List<Integer> questionIndices;
 
     @SuppressLint("MissingInflatedId")
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_practice_geo);
 
@@ -53,12 +59,19 @@ public class activity_practice_geo extends AppCompatActivity implements View.OnC
         ansC.setOnClickListener(this);
         ansD.setOnClickListener(this);
         btn_submit.setOnClickListener(this);
+
+        // Initialize and shuffle question indices
+        questionIndices = new ArrayList<>();
+        for (int i = 0; i < totalQuestion; i++) {
+            questionIndices.add(i);
+        }
+        Collections.shuffle(questionIndices);
+
         loadNewQuestion();
 
         exitBtn = findViewById(R.id.exit_quiz);
-        //Button Animation
-        scaleUp = AnimationUtils.loadAnimation(this,R.anim.scale_up);
-        scaleDown = AnimationUtils.loadAnimation(this,R.anim.scale_down);
+        scaleUp = AnimationUtils.loadAnimation(this, R.anim.scale_up);
+        scaleDown = AnimationUtils.loadAnimation(this, R.anim.scale_down);
 
         exitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,46 +84,50 @@ public class activity_practice_geo extends AppCompatActivity implements View.OnC
         });
     }
 
-    private void loadNewQuestion(){
-        totalQuestionTextView.setText("Question: " + (currentQuestionIndex+1) + "/" + totalQuestion);
-        if(currentQuestionIndex==totalQuestion){
+    private void loadNewQuestion() {
+        totalQuestionTextView.setText("Question: " + (currentQuestionIndex + 1) + "/" + totalQuestion);
+
+        if (currentQuestionIndex == totalQuestion) {
             finishQuiz();
             return;
         }
-        questionTextView.setText(question_geo.questions[currentQuestionIndex]);
 
-        ansA.setText(question_geo.choices[currentQuestionIndex][0]);
-        ansB.setText(question_geo.choices[currentQuestionIndex][1]);
-        ansC.setText(question_geo.choices[currentQuestionIndex][2]);
-        ansD.setText(question_geo.choices[currentQuestionIndex][3]);
+        // Load questions and answers based on their shuffled indices
+        int index = questionIndices.get(currentQuestionIndex);
+        questionTextView.setText(question_geo.questions[index]);
+        ansA.setText(question_geo.choices[index][0]);
+        ansB.setText(question_geo.choices[index][1]);
+        ansC.setText(question_geo.choices[index][2]);
+        ansD.setText(question_geo.choices[index][3]);
 
-        selectedAnswer="";
+        selectedAnswer = "";
     }
 
-    private void finishQuiz(){
+    private void finishQuiz() {
         String passStatus;
-        if(score >= totalQuestion*0.6){
+        if (score >= totalQuestion * 0.6) {
             passStatus = "Passes";
         } else {
             passStatus = "Failed";
         }
         new AlertDialog.Builder(this)
                 .setTitle(passStatus)
-                .setMessage("Your Score: "+score+" Out of "+totalQuestion+" Questions")
+                .setMessage("Your Score: " + score + " Out of " + totalQuestion + " Questions")
                 .setPositiveButton("Try Again?", ((dialog, i) -> restartQuiz()))
                 .setCancelable(false)
                 .show();
     }
 
-    private void restartQuiz(){
+    private void restartQuiz() {
         score = 0;
         currentQuestionIndex = 0;
-        totalQuestionTextView.setText("Question: " + (currentQuestionIndex+1) + "/" + totalQuestion);
+        Collections.shuffle(questionIndices); // Shuffle again for a new round
+        totalQuestionTextView.setText("Question: " + (currentQuestionIndex + 1) + "/" + totalQuestion);
         loadNewQuestion();
     }
 
     @Override
-    public void onClick(View view){
+    public void onClick(View view) {
         ansA.setBackgroundColor(Color.WHITE);
         ansB.setBackgroundColor(Color.WHITE);
         ansC.setBackgroundColor(Color.WHITE);
@@ -118,21 +135,20 @@ public class activity_practice_geo extends AppCompatActivity implements View.OnC
 
         Button clickedButton = (Button) view;
 
-        if(clickedButton.getId() == R.id.submit_btn) {
+        if (clickedButton.getId() == R.id.submit_btn) {
             if (!selectedAnswer.isEmpty()) {
-                if (selectedAnswer.equals(question_geo.correctAnswers[currentQuestionIndex])) {
+                int index = questionIndices.get(currentQuestionIndex);
+                if (selectedAnswer.equals(question_geo.correctAnswers[index])) {
                     score++;
                 } else {
                     clickedButton.setBackgroundColor(Color.GREEN);
                 }
                 currentQuestionIndex++;
                 loadNewQuestion();
-            } else {
-
             }
         } else {
-            selectedAnswer=clickedButton.getText().toString();
-            clickedButton.setBackgroundColor(Color.BLUE);
+            selectedAnswer = clickedButton.getText().toString();
+            clickedButton.setBackgroundColor(Color.CYAN);
         }
     }
 }

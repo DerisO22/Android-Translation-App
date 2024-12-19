@@ -53,7 +53,9 @@
             android:layout_margin="3dp"
             android:textFontWeight="900"
             android:backgroundTint="@color/teal"
+            android:textColor="@color/white"
             app1:icon="@drawable/baseline_arrow_drop_down_24"
+            app1:iconTint="@color/white"
             app1:iconGravity="end"
             android:textSize="15dp"
             android:text="English"
@@ -77,7 +79,9 @@
             android:layout_margin="3dp"
             android:textFontWeight="900"
             android:backgroundTint="@color/teal"
+            android:textColor="@color/white"
             app1:icon="@drawable/baseline_arrow_drop_down_24"
+            app1:iconTint="@color/white"
             android:textSize="15dp"
             app1:iconGravity="end"
             android:text="German"
@@ -95,7 +99,9 @@
             android:gravity="start"
             android:textSize="18sp"
             android:hint="Enter Text Here"
-            android:autofillHints="Enter Text Here" />
+            android:autofillHints="Enter Text Here"
+            android:textColor="@color/teal_700"
+            android:textColorHint="@color/teal"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/translateBtn"
@@ -106,7 +112,9 @@
         android:text="Translate"
         android:textSize="17sp"
         android:textFontWeight="900"
+        android:textColor="@color/white"
         app1:icon="@drawable/translate_logo"
+        app1:iconTint="@color/white"
         app1:iconGravity="textStart"
         android:padding="8dp"
         android:layout_marginTop="20dp"
@@ -121,6 +129,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"
+        android:textColor="@color/teal"
         android:fontFamily="@font/nunitobold"
         android:textSize="20sp"
         android:textAlignment="center"

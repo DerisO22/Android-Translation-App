@@ -85,22 +85,22 @@ public class practiceActivity extends AppCompatActivity {
                     return true;
                 case R.id.bottom_home:
                     startActivity(new Intent(getApplicationContext(), homeActivity.class));
-                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_left);
+//                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_left);
                     finish();
                     return true;
                 case R.id.bottom_text:
                     startActivity(new Intent(getApplicationContext(), textActivity.class));
-                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_left);
+//                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_left);
                     finish();
                     return true;
                 case R.id.bottom_voice:
                     startActivity(new Intent(getApplicationContext(), voiceActivity.class));
-                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_left);
+//                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_left);
                     finish();
                     return true;
                 case R.id.bottom_image:
                     startActivity(new Intent(getApplicationContext(), imageActivity.class));
-                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_left);
+//                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_left);
                     finish();
                     return true;
             }

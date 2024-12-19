@@ -27,12 +27,13 @@
 
             <TextView
                 android:id="@+id/textDashboard"
+                android:autoSizeTextType="uniform"
                 android:layout_width="match_parent"
+                android:gravity="center"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
                 android:fontFamily="@font/nunitobold"
                 android:textColor="@color/teal"
-                android:textSize="18sp"
+                android:textSize="22sp"
                 android:textStyle="bold"
                 android:textFontWeight="950"
                 android:text="Translation Home" />
@@ -41,8 +42,9 @@
                 android:layout_below="@+id/textDashboard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
                 android:layout_marginBottom="15dp"
-                android:layout_marginEnd="20dp"
                 android:fontFamily="@font/nunitobold"
                 android:textColor="@color/teal"
                 android:textSize="14sp"
@@ -50,12 +52,12 @@
                 android:textFontWeight="50"
                 android:text="Explore Different Language Features" />
 
-            <ImageView
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="20dp"
-                android:layout_width="37dp"
-                android:layout_height="37dp"
-                android:background="@drawable/home_button"/>
+<!--            <ImageView-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_marginEnd="20dp"-->
+<!--                android:layout_width="37dp"-->
+<!--                android:layout_height="37dp"-->
+<!--                android:background="@drawable/home_button"/>-->
         </RelativeLayout>
 
         <GridLayout
@@ -96,6 +98,7 @@
                         android:layout_marginTop="8dp"
                         android:textSize="16sp"
                         android:text="Text Translation"
+                        android:gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/teal"/>
@@ -131,6 +134,7 @@
                         android:layout_marginTop="8dp"
                         android:textSize="16sp"
                         android:text="Voice Translation"
+                        android:gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/teal"/>
@@ -166,6 +170,7 @@
                         android:layout_marginTop="8dp"
                         android:textSize="16sp"
                         android:text="Image Translation"
+                        android:gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/teal"/>
@@ -202,6 +207,7 @@
                         android:layout_marginTop="8dp"
                         android:textSize="16sp"
                         android:text="Practice Zone"
+                        android:gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/teal"/>
@@ -219,9 +225,9 @@
             <TextView
                 android:textAlignment="center"
                 android:fontFamily="@font/nunitobold"
-                android:textSize="18sp"
+                android:textSize="22sp"
                 android:textFontWeight="950"
-                android:text="Welcome to [App Name]❗❗"
+                android:text="Welcome to Phonici"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/teal"/>
@@ -239,7 +245,7 @@
                 android:fontFamily="@font/nunitobold"
                 android:textSize="16sp"
                 android:textFontWeight="950"
-                android:text="Supporting over 50 languages. Handy for fast and accurate text, voice, and image translations. Practice your cultural knowledge and better understand different nations in the Practice Zone."
+                android:text="Supporting over 50 languages. Handy for fast and accurate text, voice, and image translations"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/teal"/>

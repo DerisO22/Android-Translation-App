@@ -145,7 +145,7 @@ public class activity_practice_flags extends AppCompatActivity implements View.O
             }
         } else {
             selectedAnswer=clickedButton.getText().toString();
-            clickedButton.setBackgroundColor(Color.BLUE);
+            clickedButton.setBackgroundColor(Color.CYAN);
         }
     }
 }

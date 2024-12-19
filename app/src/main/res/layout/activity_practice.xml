@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textColor="#6D97CA"
-        android:textSize="26sp"
+        android:textSize="22sp"
         android:text="The Practice Zone\nChoose a Category">
   </TextView>
 
@@ -51,6 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
+        android:backgroundTint="@color/white"
         app1:cardElevation="10dp"
         app1:cardCornerRadius="12dp"
         android:layout_margin="20dp">
@@ -72,6 +73,7 @@
             android:paddingTop="4dp"
             android:layout_marginTop="8dp"
             android:textSize="16sp"
+            android:textColor="@color/teal"
             android:text="Culture"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -85,6 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
+        android:backgroundTint="@color/white"
         app1:cardCornerRadius="12dp"
         app1:cardElevation="10dp"
         android:layout_margin="20dp">
@@ -106,6 +109,7 @@
             android:layout_marginTop="8dp"
             android:paddingTop="4dp"
             android:textSize="16sp"
+            android:textColor="@color/teal"
             android:text="Flags"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -119,6 +123,7 @@
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
+        android:backgroundTint="@color/white"
         app1:cardCornerRadius="12dp"
         app1:cardElevation="10dp"
         android:layout_margin="20dp">
@@ -140,17 +145,20 @@
             android:layout_marginTop="8dp"
             android:paddingTop="4dp"
             android:textSize="16sp"
+            android:textColor="@color/teal"
             android:text="Geography"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
       </LinearLayout>
     </androidx.cardview.widget.CardView>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/button4"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
+        android:backgroundTint="@color/white"
         app1:cardCornerRadius="10dp"
         app1:cardElevation="10dp"
         android:layout_margin="20dp">
@@ -172,6 +180,7 @@
             android:layout_marginTop="8dp"
             android:textSize="16sp"
             android:paddingTop="4dp"
+            android:textColor="@color/teal"
             android:text="Language"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
